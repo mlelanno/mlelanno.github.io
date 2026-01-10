@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Martin Le Lanno | Portfolio R&T</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">MLL.</div>
+        <ul class="nav-links">
+            <li><a href="#home">Accueil</a></li>
+            <li><a href="#skills">Compétences</a></li>
+            <li><a href="#projets">Projets</a></li>
+            <li><a href="#formation">Parcours</a></li>
+            <li><a href="#contact" class="btn-contact">Me Contacter</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <header id="home">
+        <div class="hero-content">
+            <div class="text-container">
+                <span class="badge"><i class="fas fa-shield-alt"></i> Cyber & Réseaux</span>
+                <h1>Martin Le Lanno</h1>
+                <h2>Étudiant en Réseaux & Télécommunications</h2>
+                <p>
+                    Je m'appelle Martin, j’ai 17 ans et je suis étudiant en première année de BUT R&T à Colmar. Passionné par la sécurité informatique et les réseaux, je cherche une alternance pour me spécialiser. Curieux et motivé, je vise à terme un <strong>Master en Cybersécurité</strong>.
+                </p>
+                <div class="cta-group">
+                    <a href="#contact" class="btn-primary">Me contacter</a>
+                    <a href="cv_martin_le_lanno.pdf" download class="btn-secondary"><i class="fas fa-file-pdf"></i> CV PDF</a>
+                </div>
+            </div>
+            <div class="image-container">
+                <img src="https://i.postimg.cc/5NNbKD0G/photo-cv.png" alt="Martin Le Lanno">
+            </div>
+        </div>
+    </header>
+
+    <section id="skills">
+        <h2 class="section-title">Mes Armes</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3><i class="fas fa-network-wired accent-icon"></i> Infra & Systèmes</h3>
+                <ul>
+                    <li><i class="fas fa-server"></i> Config Switch/Routeur (VLAN)</li>
+                    <li><i class="fas fa-box"></i> Équipements Cisco</li>
+                    <li><i class="devicon-linux-plain colored"></i> Admin Linux (Debian) / Win</li>
+                    <li><i class="fas fa-wifi"></i> Wireshark & Analyse</li>
+                </ul>
+            </div>
+            
+            <div class="skill-card">
+                <h3><i class="fas fa-user-secret accent-icon"></i> Cyber & Code</h3>
+                <ul>
+                    <li><i class="fas fa-bug" style="color: #ef4444;"></i> <strong>Pentest</strong> (OpenBullet, Tools)</li>
+                    <li><i class="fas fa-search-location"></i> <strong>OSINT</strong> (Investigation)</li>
+                    <li><i class="devicon-python-plain colored"></i> Python / Bash / Shell</li>
+                    <li><i class="devicon-html5-plain-wordmark colored"></i> HTML5 / CSS3</li>
+                </ul>
+            </div>
+
+            <div class="skill-card">
+                <h3><i class="fas fa-globe accent-icon"></i> Langues & Atouts</h3>
+                <ul>
+                    <li><i class="fas fa-language"></i> <strong>Anglais C1</strong> (Avancé)</li>
+                    <li><i class="fas fa-flag"></i> Allemand A2</li>
+                    <li><i class="fas fa-lightbulb"></i> Veille Cyber & Curiosité</li>
+                    <li><i class="fas fa-users"></i> Esprit d'équipe</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="projets">
+        <h2 class="section-title">Réalisations Techniques</h2>
+        <div class="projects-grid">
+            
+            <div class="project-card">
+                <div class="card-header">
+                    <h3><i class="fas fa-wifi"></i> Déploiement & Audit Wi-Fi</h3>
+                    <span>Projet SAE 13</span>
+                </div>
+                <p><strong>De la couche physique à l'optimisation radio</strong></p>
+                <div class="details">
+                    <p>
+                        Réalisation intégrale d'une infrastructure Wi-Fi à l'IUT. Câblage physique (Cat 6A/7, tests Cablemaster), calculs PoE et configuration complète simulée sur Cisco Packet Tracer (WLC, VLAN, DHCP, DNS). Audit de couverture réalisé avec Acrylic Wi-Fi (Heatmaps) et mesures de débit via JPerf.
+                    </p>
+                    <div class="tech-tags">
+                        <span>Cisco Packet Tracer</span> <span>Acrylic Wi-Fi</span> <span>Câblage</span> <span>JPerf</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="card-header">
+                    <h3><i class="fas fa-user-secret"></i> Labo Cyber & Pentest</h3>
+                    <span>Autodidacte</span>
+                </div>
+                <p><strong>Apprentissage offensif (Red Team)</strong></p>
+                <div class="details">
+                    <p>Mise en place d'un environnement de test éthique. Utilisation d'outils de pentest (OpenBullet, scan de vulnérabilités) et pratique de l'OSINT (Recherche en sources ouvertes).</p>
+                    <div class="tech-tags">
+                        <span>Kali Linux</span> <span>OSINT</span> <span>Secu Offensive</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="formation">
+        <h2 class="section-title">Parcours</h2>
+        <div class="timeline">
+            
+            <div class="timeline-item">
+                <div class="date">2025 - 2028</div>
+                <div class="content">
+                    <div class="school-header">
+                        <img src="https://i.postimg.cc/pTfJtJbr/UHA.png" alt="Logo UHA" class="school-logo">
+                        <h3>BUT Réseaux & Télécoms</h3>
+                    </div>
+                    <p>IUT de Colmar - UHA</p>
+                    <p class="description">Architecture réseaux, Cybersécurité, Développement système. <strong>Recherche d'alternance pour la 2ème année.</strong></p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="date">2025</div>
+                <div class="content">
+                    <div class="school-header">
+                        <img src="https://i.postimg.cc/kgGstS8T/deck.png" alt="Logo Lycée Deck" class="school-logo">
+                        <h3>Baccalauréat STI2D</h3>
+                    </div>
+                    <p>Lycée Théodore Deck - Mention Bien</p>
+                    <p class="description">Spécialité SIN (Systèmes d'Information et Numérique).</p>
+                    <a href="https://i.postimg.cc/Y0jKP9ZW/resultats_bac.png" target="_blank" class="link-doc"><i class="fas fa-external-link-alt"></i> Voir le relevé de notes</a>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="date">Certifications</div>
+                <div class="content">
+                    <div class="school-header">
+                        <img src="https://i.postimg.cc/8zQqSDY1/pix.png" alt="Logo Pix" class="school-logo" style="width: 40px;">
+                        <h3>Certifications Pro</h3>
+                    </div>
+                    <p class="description">
+                        • <strong>PIX :</strong> Niveau Avancé 2 (Score 647)<br>
+                        • <strong>BAFA :</strong> Brevet d'Aptitude aux Fonctions d'Animateur (Complet)
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2 class="section-title">Terrain</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="card-header">
+                    <h3><i class="fas fa-utensils"></i> Job Saisonnier</h3>
+                    <span>Été 2025</span>
+                </div>
+                <p><strong>Serveur - Auberge du Kastelberg</strong> (Vosges)</p>
+                <div class="details">
+                    Service en salle intense, gestion du stress en période de forte affluence et relation client.
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="card-header">
+                    <h3><i class="fas fa-child"></i> Animation</h3>
+                    <span>2025</span>
+                </div>
+                <p><strong>Animateur en Accueil de Loisirs</strong> (Ungersheim)</p>
+                <div class="details">
+                    Gestion de groupes (3-11 ans), sécurité des mineurs, travail d'équipe et organisation d'activités.
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="card-header">
+                    <h3><i class="fas fa-eye"></i> Stage d'observation</h3>
+                    <span>2022</span>
+                </div>
+                <p><strong>Artisanat - Boucherie Braun</strong></p>
+                <div class="details">
+                    Découverte du monde professionnel, respect strict des normes d'hygiène et ponctualité.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <h2>Me Contacter</h2>
+            <p>Je suis actuellement à la recherche d'une alternance. N'hésitez pas à me contacter pour échanger.</p>
+            
+            <div class="contact-info-block">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:lelannomartin@gmail.com">lelannomartin@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:+33614787240">06 14 78 72 40</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <a href="https://www.linkedin.com/in/martin-le-lanno-03b069386/" target="_blank">Mon LinkedIn</a>
+                </div>
+            </div>
+
+            <p class="copyright">© 2026 Martin Le Lanno.</p>
+        </div>
+    </footer>
+
+    <div id="modal-notes" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img-notes" alt="Relevé de notes">
+    </div>
+
+    <script>
+        // Menu Burger
+        const burger = document.querySelector('.burger');
+        const nav = document.querySelector('.nav-links');
+        const navLinks = document.querySelectorAll('.nav-links li');
+        
+        burger.addEventListener('click', () => {
+            nav.classList.toggle('nav-active');
+            burger.classList.toggle('toggle');
+        });
+        
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('nav-active');
+                burger.classList.remove('toggle');
+            });
+        });
+
+        // Gestion de la Lightbox
+        var modal = document.getElementById("modal-notes");
+        var modalImg = document.getElementById("img-notes");
+        var linkDoc = document.querySelector('.link-doc');
+
+        if(linkDoc) {
+            linkDoc.onclick = function(e){
+                e.preventDefault(); // Empêche d'aller sur PostImages
+                modal.style.display = "block";
+                modalImg.src = this.href; // Charge l'image
+            }
+        }
+
+        // Fermeture de la Lightbox
+        var span = document.getElementsByClassName("close")[0];
+        
+        if(span) {
+            span.onclick = function() { 
+                modal.style.display = "none";
+            }
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
