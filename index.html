@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Martin Le Lanno | Portfolio R&T</title>
     <link rel="stylesheet" href="style.css">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -44,7 +45,9 @@
                     <a href="cv_martin_le_lanno.pdf" download class="btn-secondary"><i class="fas fa-file-pdf"></i> CV PDF</a>
                 </div>
             </div>
-            
+            <div class="image-container">
+                <img src="https://i.postimg.cc/5NNbKD0G/photo-cv.png" alt="Martin Le Lanno">
+            </div>
         </div>
     </header>
 
@@ -145,7 +148,7 @@
                     </div>
                     <p>Lycée Théodore Deck - Mention Bien</p>
                     <p class="description">Spécialité SIN (Systèmes d'Information et Numérique).</p>
-                    <a href="https://i.postimg.cc/Y0jKP9ZW/resultats_bac.png" target="_blank" class="link-doc"><i class="fas fa-external-link-alt"></i> Voir le relevé de notes</a>
+                    <a href="https://i.postimg.cc/Y0jKP9ZW/resultats_bac.png" class="link-doc"><i class="fas fa-external-link-alt"></i> Voir le relevé de notes</a>
                 </div>
             </div>
 
@@ -233,47 +236,57 @@
     </div>
 
     <script>
+        // Menu Burger
         const burger = document.querySelector('.burger');
         const nav = document.querySelector('.nav-links');
         const navLinks = document.querySelectorAll('.nav-links li');
         
-        burger.addEventListener('click', () => {
-            nav.classList.toggle('nav-active');
-            burger.classList.toggle('toggle');
-        });
-        
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                nav.classList.remove('nav-active');
-                burger.classList.remove('toggle');
+        if(burger && nav) {
+            burger.addEventListener('click', () => {
+                nav.classList.toggle('nav-active');
+                burger.classList.toggle('toggle');
             });
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    nav.classList.remove('nav-active');
+                    burger.classList.remove('toggle');
+                });
+            });
+        }
+
+        // Lightbox Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById("modal-notes");
+            const modalImg = document.getElementById("img-notes");
+            const linkDocs = document.querySelectorAll('.link-doc'); // Sélectionne TOUS les liens avec cette classe
+            const span = document.getElementsByClassName("close")[0];
+
+            if(modal && modalImg) {
+                // Pour chaque lien de document
+                linkDocs.forEach(link => {
+                    link.addEventListener('click', function(e) {
+                        e.preventDefault(); // EMPÊCHE D'ALLER SUR POSTIMG
+                        modal.style.display = "block";
+                        modalImg.src = this.href; // Utilise le lien de l'image
+                    });
+                });
+
+                // Fermer avec la croix
+                if(span) {
+                    span.onclick = function() { 
+                        modal.style.display = "none";
+                    }
+                }
+
+                // Fermer en cliquant à côté
+                window.onclick = function(event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                    }
+                }
+            }
         });
-
-        var modal = document.getElementById("modal-notes");
-        var modalImg = document.getElementById("img-notes");
-        var linkDoc = document.querySelector('.link-doc');
-
-        if(linkDoc) {
-            linkDoc.onclick = function(e){
-                e.preventDefault();
-                modal.style.display = "block";
-                modalImg.src = this.href;
-            }
-        }
-
-        var span = document.getElementsByClassName("close")[0];
-        
-        if(span) {
-            span.onclick = function() { 
-                modal.style.display = "none";
-            }
-        }
-
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
     </script>
 </body>
 </html>
