@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Martin Le Lanno | Portfolio R&T</title>
     <link rel="stylesheet" href="style.css">
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -236,7 +235,6 @@
     </div>
 
     <script>
-        // Menu Burger
         const burger = document.querySelector('.burger');
         const nav = document.querySelector('.nav-links');
         const navLinks = document.querySelectorAll('.nav-links li');
@@ -253,20 +251,18 @@
             });
         });
 
-        // Gestion de la Lightbox
         var modal = document.getElementById("modal-notes");
         var modalImg = document.getElementById("img-notes");
         var linkDoc = document.querySelector('.link-doc');
 
         if(linkDoc) {
             linkDoc.onclick = function(e){
-                e.preventDefault(); // Empêche d'aller sur PostImages
+                e.preventDefault();
                 modal.style.display = "block";
-                modalImg.src = this.href; // Charge l'image
+                modalImg.src = this.href;
             }
         }
 
-        // Fermeture de la Lightbox
         var span = document.getElementsByClassName("close")[0];
         
         if(span) {

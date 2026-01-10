@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>CV Martin Le Lanno</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* RESET & BASE */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fff;
+            color: #1e293b;
+            width: 210mm; 
+            height: 297mm;
+            margin: 0 auto;
+            display: flex;
+            overflow: hidden;
+        }
+
+        /* SIDEBAR (GAUCHE) */
+        .sidebar {
+            width: 32%; 
+            background-color: #0f172a;
+            color: white;
+            padding: 40px 25px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .photo-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .photo-container img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            border: 4px solid #38bdf8;
+            object-fit: cover;
+        }
+
+        .sidebar h2 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            border-bottom: 2px solid #38bdf8;
+            padding-bottom: 8px;
+            margin: 30px 0 15px 0;
+            color: #38bdf8;
+            font-weight: 700;
+        }
+
+        .contact-info { margin-bottom: 10px; }
+        .contact-info div {
+            margin-bottom: 14px;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            line-height: 1.4;
+        }
+        .contact-info i { color: #38bdf8; width: 16px; font-size: 14px; }
+        .contact-info a { color: white; text-decoration: none; }
+
+        .skill-list li {
+            list-style: none;
+            margin-bottom: 10px;
+            font-size: 12.5px;
+            line-height: 1.5;
+        }
+        .skill-list strong { color: #cbd5e1; font-weight: 600; }
+
+        /* MAIN CONTENT (DROITE) */
+        .main {
+            width: 68%;
+            padding: 45px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .header-name { margin-bottom: 30px; }
+        .header-name h1 {
+            font-size: 36px;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 8px;
+            line-height: 1;
+            text-transform: uppercase;
+        }
+        .header-name h2 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #0ea5e9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .intro {
+            font-size: 12.5px;
+            color: #334155;
+            margin-bottom: 30px;
+            line-height: 1.5;
+            text-align: justify;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: 800;
+            color: #0f172a;
+            border-left: 5px solid #0ea5e9;
+            padding-left: 12px;
+            margin-bottom: 20px;
+            margin-top: 25px;
+            display: flex;
+            align-items: center;
+            text-transform: uppercase;
+        }
+
+        .item { margin-bottom: 20px; }
+        
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+        .item-title { font-weight: 700; font-size: 14px; color: #1e293b; }
+        .item-date { font-size: 13px; color: #0ea5e9; font-weight: 600; }
+        .item-subtitle { font-size: 13px; font-style: italic; color: #64748b; margin-bottom: 6px; font-weight: 500; }
+        .item-desc { font-size: 12.5px; color: #334155; line-height: 1.5; }
+
+        @media print {
+            body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        }
+    </style>
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="photo-container">
+            <img src="https://i.postimg.cc/5NNbKD0G/photo-cv.png" alt="Martin Le Lanno">
+        </div>
+
+        <div class="contact-info">
+            <div><i class="fas fa-envelope"></i> lelannomartin@gmail.com</div>
+            <div><i class="fas fa-phone"></i> 06 14 78 72 40</div>
+            <div><i class="fas fa-map-marker-alt"></i> Alsace, France</div>
+            <div><i class="fab fa-linkedin"></i> linkedin.com/in/martin-le-lanno</div>
+            <div><i class="fas fa-globe"></i> mlelanno.github.io</div>
+        </div>
+
+        <h2>Compétences</h2>
+        <ul class="skill-list">
+            <li><strong>Réseaux :</strong> Cisco, VLAN, Routage, Wireshark, Modèle OSI</li>
+            <li><strong>Système :</strong> Linux (Debian), Windows, Virtualisation</li>
+            <li><strong>Cyber :</strong> Pentest (OpenBullet), OSINT, Sécurité Offensive</li>
+            <li><strong>Dev :</strong> Python, HTML5/CSS3, Bash</li>
+        </ul>
+
+        <h2>Langues</h2>
+        <ul class="skill-list">
+            <li><strong>Anglais :</strong> C1 (Avancé)</li>
+            <li><strong>Allemand :</strong> A2 (Basique)</li>
+            <li><strong>Français :</strong> Langue maternelle</li>
+        </ul>
+
+        <h2>Certifications</h2>
+        <ul class="skill-list">
+            <li>PIX (Niveau Avancé 2)</li>
+            <li>BAFA Complet</li>
+        </ul>
+    </aside>
+
+    <main class="main">
+        <div class="header-name">
+            <h1>Martin LE LANNO</h1>
+            <h2>Étudiant en Réseaux & Télécommunications</h2>
+        </div>
+        <p class="intro">
+            Je m'appelle Martin Le Lanno, j’ai 17 ans et je suis actuellement étudiant en première année de <strong>BUT Réseaux et Télécommunications à l’IUT de Colmar</strong>. Passionné par la sécurité informatique et les infrastructures réseau, je souhaite me spécialiser dans la cybersécurité. 
+            Curieux et motivé, je cherche une alternance pour développer mes compétences, comprendre le terrain et progresser techniquement. Mon objectif est de valider mon BUT et de poursuivre en <strong>Master en Cybersécurité</strong>.
+        </p>
+
+        <div class="section-title">Formation</div>
+        
+        <div class="item">
+            <div class="item-header">
+                <span class="item-title">BUT Réseaux & Télécommunications</span>
+                <span class="item-date">2025 - Présent</span>
+            </div>
+            <div class="item-subtitle">IUT de Colmar (UHA)</div>
+            <div class="item-desc">
+                Apprentissage de l'architecture réseaux, administration système et cybersécurité.
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="item-header">
+                <span class="item-title">Baccalauréat STI2D (Option SIN)</span>
+                <span class="item-date">2025</span>
+            </div>
+            <div class="item-subtitle">Lycée Théodore Deck - Mention Bien</div>
+            <div class="item-desc">Spécialité Systèmes d'Information et Numérique.</div>
+        </div>
+
+        <div class="section-title">Projets Techniques</div>
+
+        <div class="item">
+            <div class="item-header">
+                <span class="item-title">Déploiement & Audit Wi-Fi (SAE 13)</span>
+                <span class="item-date">2025</span>
+            </div>
+            <div class="item-desc">
+                Projet complet d'infrastructure IUT : Câblage physique (Cat 6A), configuration Cisco (WLC, DHCP, VLAN) et audit de couverture radio pro (Acrylic Wi-Fi Heatmaps, JPerf).
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="item-header">
+                <span class="item-title">Labo Cyber & Pentest (Autodidacte)</span>
+                <span class="item-date">Perso</span>
+            </div>
+            <div class="item-desc">
+                Mise en place d'un environnement de test (Kali Linux). Pratique du pentesting (OpenBullet), analyse de vulnérabilités et techniques OSINT.
+            </div>
+        </div>
+
+        <div class="section-title">Expériences</div>
+
+        <div class="item">
+            <div class="item-header">
+                <span class="item-title">Serveur en Restauration</span>
+                <span class="item-date">Été 2025</span>
+            </div>
+            <div class="item-subtitle">Auberge du Kastelberg (Vosges)</div>
+            <div class="item-desc">Service en salle intense, gestion du stress et relation client.</div>
+        </div>
+
+        <div class="item">
+            <div class="item-header">
+                <span class="item-title">Animateur BAFA</span>
+                <span class="item-date">2025</span>
+            </div>
+            <div class="item-subtitle">Accueil de Loisirs (Ungersheim)</div>
+            <div class="item-desc">Encadrement de groupes, responsabilité et sécurité des mineurs.</div>
+        </div>
+
+    </main>
+</body>
+</html>
