@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Martin Le Lanno | Portfolio R&T</title>
     <link rel="stylesheet" href="style.css">
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -52,7 +51,7 @@
     </header>
 
     <section id="skills">
-        <h2 class="section-title">Mes Compétences</h2>
+        <h2 class="section-title">Mes Armes</h2>
         <div class="skills-grid">
             <div class="skill-card">
                 <h3><i class="fas fa-network-wired accent-icon"></i> Infra & Systèmes</h3>
@@ -79,6 +78,7 @@
                 <ul>
                     <li><i class="fas fa-language"></i> <strong>Anglais C1</strong> (Avancé)</li>
                     <li><i class="fas fa-flag"></i> Allemand A2</li>
+                    <li><i class="fas fa-car"></i> Permis B</li>
                     <li><i class="fas fa-lightbulb"></i> Veille Cyber & Curiosité</li>
                     <li><i class="fas fa-users"></i> Esprit d'équipe</li>
                 </ul>
@@ -236,7 +236,6 @@
     </div>
 
     <script>
-        // Menu Burger
         const burger = document.querySelector('.burger');
         const nav = document.querySelector('.nav-links');
         const navLinks = document.querySelectorAll('.nav-links li');
@@ -255,31 +254,27 @@
             });
         }
 
-        // Lightbox Logic
         document.addEventListener('DOMContentLoaded', () => {
             const modal = document.getElementById("modal-notes");
             const modalImg = document.getElementById("img-notes");
-            const linkDocs = document.querySelectorAll('.link-doc'); // Sélectionne TOUS les liens avec cette classe
+            const linkDocs = document.querySelectorAll('.link-doc');
             const span = document.getElementsByClassName("close")[0];
 
             if(modal && modalImg) {
-                // Pour chaque lien de document
                 linkDocs.forEach(link => {
                     link.addEventListener('click', function(e) {
-                        e.preventDefault(); // EMPÊCHE D'ALLER SUR POSTIMG
+                        e.preventDefault();
                         modal.style.display = "block";
-                        modalImg.src = this.href; // Utilise le lien de l'image
+                        modalImg.src = this.href;
                     });
                 });
 
-                // Fermer avec la croix
                 if(span) {
                     span.onclick = function() { 
                         modal.style.display = "none";
                     }
                 }
 
-                // Fermer en cliquant à côté
                 window.onclick = function(event) {
                     if (event.target == modal) {
                         modal.style.display = "none";

@@ -36,7 +36,6 @@ ul {
     list-style: none;
 }
 
-
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -87,7 +86,6 @@ ul {
     color: var(--bg-color) !important;
 }
 
-
 .burger {
     display: none;
     cursor: pointer;
@@ -99,7 +97,6 @@ ul {
     margin: 6px;
     transition: all 0.3s ease;
 }
-
 
 header {
     min-height: 100vh;
@@ -206,7 +203,6 @@ h2 {
     box-shadow: 0 0 30px rgba(56, 189, 248, 0.1);
 }
 
-
 section {
     padding: 6rem 10%;
     max-width: 1400px;
@@ -229,7 +225,6 @@ section {
     margin: 15px auto 0;
     border-radius: 2px;
 }
-
 
 .skills-grid {
     display: grid;
@@ -277,7 +272,6 @@ section {
     width: 20px;
     text-align: center;
 }
-
 
 .timeline {
     position: relative;
@@ -384,7 +378,6 @@ section {
     cursor: pointer; 
 }
 
-
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -436,7 +429,6 @@ section {
     border: 1px solid rgba(56, 189, 248, 0.3);
 }
 
-
 footer {
     text-align: center;
     padding: 5rem 5%;
@@ -473,7 +465,6 @@ footer {
     font-size: 0.8rem;
     opacity: 0.6;
 }
-
 
 @media screen and (max-width: 768px) {
     .nav-links {
@@ -543,7 +534,6 @@ footer {
     
     .contact-info-block { flex-direction: column; gap: 1.5rem; }
 }
-
 
 .modal {
     display: none; 
