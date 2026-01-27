@@ -7,24 +7,32 @@
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* --- CONFIGURATION D'IMPRESSION STRICTE (Supprime la page 2) --- */
+        @page {
+            size: A4;
+            margin: 0; /* C'est ça qui enlève le vide et le rectangle noir */
+        }
+        
         * { box-sizing: border-box; margin: 0; padding: 0; }
+        
         body {
             font-family: 'Inter', sans-serif;
             background: #fff;
             color: #1e293b;
             width: 210mm; 
-            height: 297mm;
-            margin: 0 auto;
+            height: 297mm; /* Force la hauteur exacte A4 */
+            margin: 0;
             display: flex;
-            overflow: hidden;
+            overflow: hidden; /* Coupe tout ce qui dépasse */
         }
 
+        /* SIDEBAR (GAUCHE) */
         .sidebar {
             width: 32%; 
             background-color: #0f172a;
             color: white;
             padding: 40px 25px;
-            height: 100%;
+            height: 100%; /* Prend toute la hauteur */
             display: flex;
             flex-direction: column;
         }
@@ -72,6 +80,7 @@
         }
         .skill-list strong { color: #cbd5e1; font-weight: 600; }
 
+        /* MAIN CONTENT (DROITE) */
         .main {
             width: 68%;
             padding: 45px 40px;
