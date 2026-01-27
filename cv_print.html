@@ -7,20 +7,20 @@
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* CONFIGURATION D'IMPRESSION ULTRA STRICTE */
+        /* CONFIGURATION D'IMPRESSION */
         @page {
             size: A4;
-            margin: 0;
+            margin: 0; /* Impératif pour éviter le débordement */
         }
         
         * { box-sizing: border-box; margin: 0; padding: 0; }
         
         html, body {
             width: 210mm;
-            height: 296.8mm; /* Une fraction de mm en moins pour éviter la page 2 */
+            height: 297mm; /* RETOUR À LA TAILLE EXACTE A4 */
             margin: 0;
             padding: 0;
-            overflow: hidden; /* Coupe brutalement tout ce qui dépasse */
+            overflow: hidden; /* Coupe tout ce qui dépasse d'un pixel */
             font-family: 'Inter', sans-serif;
             background: #fff;
             color: #1e293b;
@@ -34,7 +34,7 @@
             width: 32%; 
             background-color: #0f172a;
             color: white;
-            padding: 35px 25px; /* Un peu moins de padding haut/bas */
+            padding: 35px 25px;
             height: 100%;
             display: flex;
             flex-direction: column;
@@ -182,7 +182,7 @@
         <ul class="skill-list">
             <li>PIX (Niveau Avancé 2)</li>
             <li>BAFA Complet</li>
-            <li>Permis B + Véhicule</li>
+            <li><strong>Permis B + Véhicule</strong></li>
         </ul>
     </aside>
 
