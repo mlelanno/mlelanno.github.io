@@ -7,7 +7,7 @@
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* FORCE LA PAGE UNIQUE ET SUPPRIME LES MARGES BLANCHES */
+        /* CONFIGURATION D'IMPRESSION ULTRA STRICTE */
         @page {
             size: A4;
             margin: 0;
@@ -17,14 +17,16 @@
         
         html, body {
             width: 210mm;
-            height: 297mm;
+            height: 296.8mm; /* Une fraction de mm en moins pour éviter la page 2 */
             margin: 0;
             padding: 0;
-            overflow: hidden; /* Coupe tout ce qui dépasse */
+            overflow: hidden; /* Coupe brutalement tout ce qui dépasse */
             font-family: 'Inter', sans-serif;
             background: #fff;
             color: #1e293b;
             display: flex;
+            page-break-after: avoid;
+            page-break-inside: avoid;
         }
 
         /* SIDEBAR (GAUCHE) */
@@ -32,7 +34,7 @@
             width: 32%; 
             background-color: #0f172a;
             color: white;
-            padding: 30px 20px; /* Marges réduites pour sécurité */
+            padding: 35px 25px; /* Un peu moins de padding haut/bas */
             height: 100%;
             display: flex;
             flex-direction: column;
@@ -43,8 +45,8 @@
             margin-bottom: 25px;
         }
         .photo-container img {
-            width: 120px;
-            height: 120px;
+            width: 125px;
+            height: 125px;
             border-radius: 50%;
             border: 4px solid #38bdf8;
             object-fit: cover;
@@ -84,7 +86,7 @@
         /* MAIN CONTENT (DROITE) */
         .main {
             width: 68%;
-            padding: 40px 35px; /* Marges réduites */
+            padding: 40px 35px;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
@@ -92,7 +94,7 @@
 
         .header-name { margin-bottom: 25px; }
         .header-name h1 {
-            font-size: 32px;
+            font-size: 34px;
             font-weight: 800;
             color: #0f172a;
             margin-bottom: 5px;
@@ -100,7 +102,7 @@
             text-transform: uppercase;
         }
         .header-name h2 {
-            font-size: 14px;
+            font-size: 15px;
             font-weight: 600;
             color: #0ea5e9;
             text-transform: uppercase;
@@ -180,7 +182,8 @@
         <ul class="skill-list">
             <li>PIX (Niveau Avancé 2)</li>
             <li>BAFA Complet</li>
-            <li><strong>Permis B + Véhicule</strong></li> </ul>
+            <li>Permis B + Véhicule</li>
+        </ul>
     </aside>
 
     <main class="main">
