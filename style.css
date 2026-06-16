@@ -129,10 +129,49 @@ footer { background: var(--bg-card); padding: 4rem 5% 2rem; border-top: 1px soli
 .project-body ul li { position: relative; padding-left: 1.5rem; margin-bottom: 0.8rem; color: var(--text-muted); }
 .project-body ul li::before { content: "▹"; position: absolute; left: 0; color: var(--accent); }
 
-.img-block { margin: 2rem 0; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: var(--bg-card); }
-.img-block img { width: 100%; height: auto; display: block; }
-.img-caption { padding: 0.8rem; text-align: center; font-size: 0.9rem; color: var(--text-muted); border-top: 1px solid var(--border); }
-.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 1.5rem; }
+/* --- GESTION PRO DES IMAGES (LUDOTHEQUE) --- */
+.img-block { 
+    margin: 2.5rem 0; 
+    border: 1px solid var(--border); 
+    border-radius: 8px; 
+    overflow: hidden; 
+    background: #090d16; /* Fond ultra sombre pour détacher les captures */
+    text-align: center;  /* Centre l'image si elle est plus petite que le bloc */
+}
+
+.img-block img { 
+    max-width: 100%;    /* Empêche l'image de déborder sur mobile */
+    max-height: 400px;  /* Limite la hauteur pour éviter l'effet géant */
+    width: auto;        /* Conserve les proportions d'origine sans étirer */
+    height: auto;
+    display: inline-block; 
+    opacity: 0.9;
+    transition: var(--transition);
+}
+
+.img-block img:hover { 
+    opacity: 1; 
+}
+
+.img-caption { 
+    padding: 0.8rem; 
+    text-align: center; 
+    font-size: 0.85rem; 
+    color: var(--text-muted); 
+    background: var(--bg-card); 
+    border-top: 1px solid var(--border); 
+}
+
+/* Ajustement de la grille pour les petites captures côte à côte */
+.grid-2 { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 1.5rem; 
+}
+
+.grid-2 .img-block img {
+    max-height: 250px; /* Hauteur plus petite quand elles sont en groupe */
+}
 
 /* --- RESPONSIVE --- */
 @media screen and (max-width: 768px) {
