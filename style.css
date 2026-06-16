@@ -135,18 +135,24 @@ footer { background: var(--bg-card); padding: 4rem 5% 2rem; border-top: 1px soli
     border: 1px solid var(--border); 
     border-radius: 8px; 
     overflow: hidden; 
-    background: #090d16; /* Fond ultra sombre pour détacher les captures */
-    text-align: center;  /* Centre l'image si elle est plus petite que le bloc */
+    background: #090d16; 
+    /* La méthode forte pour centrer : Flexbox */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem; /* Crée un espace pour que l'image respire */
 }
 
 .img-block img { 
-    max-width: 100%;    /* Empêche l'image de déborder sur mobile */
-    max-height: 400px;  /* Limite la hauteur pour éviter l'effet géant */
-    width: auto;        /* Conserve les proportions d'origine sans étirer */
-    height: auto;
-    display: inline-block; 
+    /* Le !important force le navigateur à écouter cette règle en priorité absolue */
+    max-width: 100% !important;    
+    max-height: 350px !important;  /* On réduit un peu la hauteur max */
+    width: auto !important;        
+    height: auto !important;
+    object-fit: contain !important; /* Interdit formellement l'étirement */
     opacity: 0.9;
     transition: var(--transition);
+    border-radius: 4px;
 }
 
 .img-block img:hover { 
@@ -160,6 +166,7 @@ footer { background: var(--bg-card); padding: 4rem 5% 2rem; border-top: 1px soli
     color: var(--text-muted); 
     background: var(--bg-card); 
     border-top: 1px solid var(--border); 
+    margin-top: -1px; /* Corrige un petit espace blanc potentiel sous l'image */
 }
 
 /* Ajustement de la grille pour les petites captures côte à côte */
@@ -170,7 +177,7 @@ footer { background: var(--bg-card); padding: 4rem 5% 2rem; border-top: 1px soli
 }
 
 .grid-2 .img-block img {
-    max-height: 250px; /* Hauteur plus petite quand elles sont en groupe */
+    max-height: 250px !important; 
 }
 
 /* --- RESPONSIVE --- */
