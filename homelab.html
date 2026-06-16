@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infrastructure Homelab | Martin Le Lanno</title>
+    <!-- On garde le v=5 pour être sûr de charger le bon CSS -->
+    <link rel="stylesheet" href="style.css?v=5">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">MLL.</div>
+        <ul class="nav-links">
+            <li><a href="index.html#home">Accueil</a></li>
+            <li><a href="index.html#projets">Retour aux Projets</a></li>
+            <li><a href="index.html#contact" class="btn-contact">Me Contacter</a></li>
+        </ul>
+    </nav>
+
+    <section style="padding-top: 120px;">
+        <div class="project-detail-hero">
+            <a href="index.html#projets" class="back-link"><i class="fas fa-arrow-left"></i> Retour au portfolio</a>
+            <h1 class="section-title" style="margin-bottom: 1rem;">Infrastructure Serveur Domestique</h1>
+            <div class="tech-tags" style="justify-content: center;">
+                <span>Linux Debian</span>
+                <span>Docker</span>
+                <span>Nginx</span>
+                <span>WireGuard / Fail2Ban</span>
+            </div>
+        </div>
+
+        <div class="project-body">
+            
+            <p>
+                <strong>Le Concept :</strong> L'auto-hébergement (Homelab) est le meilleur terrain d'entraînement pour un administrateur système. L'objectif de ce projet est de concevoir, déployer et maintenir une infrastructure de serveurs tournant 24h/24 et 7j/7, avec les mêmes exigences de disponibilité et de sécurité qu'en environnement d'entreprise.
+            </p>
+
+            <!-- REMPLACE "homelab-dash.png" PAR TA PROPRE CAPTURE (ex: Un dashboard Portainer, Proxmox, ou un terminal htop) -->
+            <div class="img-block">
+                <img src="homelab-dash.png" alt="Aperçu du Dashboard du Homelab">
+            </div>
+
+            <h3>1. Conteneurisation & Isolation (Docker)</h3>
+            <p>Pour garantir la stabilité du système et éviter les conflits entre les applications, l'ensemble des services est conteneurisé :</p>
+            <ul>
+                <li><strong>Isolation des processus :</strong> Chaque service tourne dans son propre environnement cloisonné grâce à <strong>Docker</strong>. Si une application crashe, elle n'impacte pas le reste du serveur.</li>
+                <li><strong>Infrastructure as Code :</strong> Déploiement et gestion des piles applicatives via <code>docker-compose</code>, permettant de restaurer ou migrer un service en quelques secondes.</li>
+            </ul>
+            
+            <!-- REMPLACE "docker.png" PAR TA CAPTURE (ex: Liste des conteneurs, fichier docker-compose) -->
+            <div class="img-block">
+                <img src="docker.png" alt="Gestion des conteneurs Docker">
+            </div>
+
+            <h3>2. Routage Web & Proxy Inversé (Nginx)</h3>
+            <p>Pour exposer certains services proprement et de manière sécurisée, j'ai mis en place un point d'entrée unique :</p>
+            <ul>
+                <li><strong>Reverse Proxy Nginx :</strong> Redirige intelligemment le trafic entrant vers le bon conteneur en fonction du sous-domaine demandé.</li>
+                <li><strong>Gestion des certificats SSL/TLS :</strong> Chiffrement obligatoire des flux web pour garantir la confidentialité des échanges de bout en bout.</li>
+            </ul>
+
+            <!-- REMPLACE "nginx.png" PAR TA CAPTURE (ex: Fichier de configuration Nginx ou logs) -->
+            <div class="img-block">
+                <img src="nginx.png" alt="Configuration du Reverse Proxy Nginx">
+            </div>
+
+            <h3>3. Accès Distant & Tunneling (WireGuard)</h3>
+            <p>L'administration de l'infrastructure à distance ne doit jamais se faire via des ports ouverts exposés publiquement sur internet. La solution adoptée repose sur le tunneling réseau :</p>
+            <p>Déploiement d'un VPN <strong>WireGuard</strong>. Ce protocole cryptographique de pointe me permet de me connecter à mon réseau local de manière transparente depuis l'extérieur, comme si j'y étais physiquement branché, sans ouvrir l'accès d'administration au reste du monde.</p>
+            
+            <!-- REMPLACE "wireguard.png" PAR TA CAPTURE (ex: Configuration WireGuard ou test de ping) -->
+            <div class="img-block">
+                <img src="wireguard.png" alt="Connexion VPN WireGuard">
+            </div>
+
+            <h3>4. Durcissement du Serveur (Sécurité)</h3>
+            <p>Une machine exposée au web subit des scans et des attaques automatisées en permanence. Le durcissement (Hardening) du serveur Debian est crucial :</p>
+            <ul>
+                <li><strong>Protection SSH :</strong> Désactivation de l'authentification par mot de passe (clés asymétriques uniquement), changement de port et interdiction du login "root".</li>
+                <li><strong>Bannissement automatique :</strong> Implémentation de <strong>Fail2Ban</strong> pour analyser les logs en temps réel. Toute IP tentant de "bruteforcer" un accès est instantanément bloquée au niveau du pare-feu.</li>
+            </ul>
+
+        </div>
+    </section>
+
+    <footer id="contact" style="margin-top: 4rem;">
+        <div class="footer-content">
+            <p class="copyright">© 2026 Martin Le Lanno.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
