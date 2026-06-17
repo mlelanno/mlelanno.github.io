@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Infrastructure Homelab | Martin Le Lanno</title>
-    <link rel="stylesheet" href="style.css?v=10">
+    <link rel="stylesheet" href="style.css?v=12">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -12,19 +12,33 @@
 <body>
 
     <nav class="navbar">
-        <div class="logo">MLL.</div>
-        <ul class="nav-links">
-            <li><a href="index.html#home">Accueil</a></li>
-            <li><a href="index.html#projets">Retour aux Projets</a></li>
-            <li><a href="index.html#contact" class="btn-contact">Me Contacter</a></li>
-        </ul>
+        <div class="nav-header">
+            <div class="logo">MLL.</div>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+        <div class="nav-content">
+            <ul class="nav-links">
+                <li><a href="index.html#home"><span class="fr">Accueil</span><span class="en">Home</span></a></li>
+                <li><a href="index.html#projets"><span class="fr">Retour aux Projets</span><span class="en">Back to Projects</span></a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="btn-lang" onclick="toggleLanguage()">
+                    <span class="fr">ENGLISH</span><span class="en">FRANCAIS</span>
+                </button>
+                <a href="index.html#contact" class="btn-contact"><span class="fr">Me Contacter</span><span class="en">Contact Me</span></a>
+            </div>
+        </div>
     </nav>
 
-    <section style="padding-top: 120px;">
+    <section style="padding-top: 60px;">
         <div class="project-detail-hero">
-            <a href="index.html#projets" class="back-link"><i class="fas fa-arrow-left"></i> Retour au portfolio</a>
-            <h1 class="section-title" style="margin-bottom: 1rem;">Infrastructure Serveur Domestique</h1>
-            <div class="tech-tags" style="justify-content: center;">
+            <a href="index.html#projets" class="back-link"><i class="fas fa-arrow-left"></i> <span class="fr">Retour au portfolio</span><span class="en">Back to portfolio</span></a>
+            <h1 class="section-title" style="margin-bottom: 1rem;"><span class="fr">Infrastructure Serveur Domestique</span><span class="en">Home Server Infrastructure</span></h1>
+            <div class="tech-tags" style="justify-content: flex-start; margin-bottom: 2rem;">
                 <span>Linux Debian</span>
                 <span>Docker & Dockge</span>
                 <span>Nginx Proxy Manager</span>
@@ -35,57 +49,59 @@
         <div class="project-body">
             
             <p>
-                <strong>Le Concept :</strong> L'auto-hébergement (Homelab) est le meilleur terrain d'entraînement pour un administrateur système. L'objectif de ce projet est de concevoir, déployer et maintenir une infrastructure de serveurs tournant 24h/24, avec des exigences strictes de disponibilité et de sécurité. Voici le portail central (Homer) regroupant l'ensemble de mes services auto-hébergés :
+                <strong><span class="fr">Le Concept :</span><span class="en">The Concept:</span></strong> 
+                <span class="fr">L'auto-hébergement (Homelab) est le meilleur terrain d'entraînement. L'objectif est de concevoir et maintenir une infrastructure tournant 24h/24 avec des exigences strictes de disponibilité. Voici le portail central (Homer) regroupant l'ensemble de mes services :</span>
+                <span class="en">Self-hosting (Homelab) is the best training ground. The goal is to design and maintain a 24/7 infrastructure with strict availability requirements. Here is the central portal (Homer) gathering all my services:</span>
             </p>
 
             <div class="img-block">
-                <img src="homer.png" alt="Portail Homer du Homelab">
+                <img src="homer.png" alt="Portail Homer">
             </div>
 
-            <h3>1. Monitoring & Administration Système</h3>
-            <p>Un serveur de production nécessite une surveillance constante. J'ai mis en place un monitoring complet pour suivre l'état du matériel (CPU, RAM, Températures des disques) via des dashboards dédiés, couplé à une administration en direct via terminal pour gérer les processus critiques de l'OS Linux :</p>
+            <h3>1. Monitoring & Administration</h3>
+            <p>
+                <span class="fr">J'ai mis en place un monitoring complet pour suivre l'état du matériel (CPU, RAM, Disques) via des dashboards dédiés, couplé à une administration en direct via terminal :</span>
+                <span class="en">I set up comprehensive monitoring to track hardware status (CPU, RAM, Disks) via dedicated dashboards, coupled with live terminal administration:</span>
+            </p>
             
             <div class="grid-2">
-                <div class="img-block">
-                    <img src="dashboard.png" alt="Dashboard de monitoring système">
-                </div>
-                <div class="img-block">
-                    <img src="term.png" alt="Terminal htop administration">
-                </div>
+                <div class="img-block"><img src="dashboard.png" alt="Dashboard"></div>
+                <div class="img-block"><img src="term.png" alt="Terminal htop"></div>
             </div>
 
-            <h3>2. Conteneurisation & Déploiement (Docker)</h3>
-            <p>Pour garantir la stabilité du système, l'ensemble des services est conteneurisé. La gestion des stacks (fichiers compose) et des volumes s'effectue de manière centralisée, permettant de déployer rapidement des environnements isolés. Cela me permet d'héberger en local des applications gourmandes comme des modèles d'Intelligence Artificielle (Llama via Ollama / Open WebUI) ou des plateformes de streaming privées :</p>
+            <h3>2. <span class="fr">Conteneurisation</span><span class="en">Containerization</span> (Docker)</h3>
+            <p>
+                <span class="fr">L'ensemble des services est conteneurisé. La gestion des stacks s'effectue de manière centralisée, permettant d'héberger en local des applications gourmandes comme des modèles d'IA (Ollama) :</span>
+                <span class="en">All services are containerized. Stack management is centralized, allowing local hosting of demanding applications like AI models (Ollama):</span>
+            </p>
 
             <div class="grid-2">
                 <div class="img-block" style="grid-column: 1 / -1;">
-                    <img src="drive.png" alt="Gestion des fichiers et stacks Docker">
+                    <img src="drive.png" alt="Docker files">
                 </div>
-                <div class="img-block">
-                    <img src="ai.png" alt="Interface IA Locale Open WebUI">
-                </div>
-                <div class="img-block">
-                    <img src="cine.png" alt="Plateforme de streaming média">
-                </div>
+                <div class="img-block"><img src="ai.png" alt="Local AI"></div>
+                <div class="img-block"><img src="cine.png" alt="Streaming platform"></div>
             </div>
 
-            <h3>3. Exposition Sécurisée (Reverse Proxy & DNS)</h3>
-            <p>Exposer ses services sur internet exige une grande rigueur. J'utilise <strong>Nginx Proxy Manager</strong> pour gérer le routage web. Le trafic est redirigé intelligemment vers les bons conteneurs et systématiquement chiffré via des certificats SSL Let's Encrypt :</p>
+            <h3>3. <span class="fr">Exposition Sécurisée</span><span class="en">Secure Exposure</span> (Proxy & DNS)</h3>
+            <p>
+                <span class="fr">J'utilise <strong>Nginx Proxy Manager</strong> pour gérer le routage web. Le trafic est redirigé vers les bons conteneurs et chiffré via des certificats SSL Let's Encrypt :</span>
+                <span class="en">I use <strong>Nginx Proxy Manager</strong> to handle web routing. Traffic is redirected to the right containers and encrypted via Let's Encrypt SSL certificates:</span>
+            </p>
 
             <div class="grid-2">
-                <div class="img-block">
-                    <img src="firstproxy.png" alt="Configuration Nginx Proxy Manager">
-                </div>
-                <div class="img-block">
-                    <img src="congratsnginx.png" alt="Page de succès Nginx">
-                </div>
+                <div class="img-block"><img src="firstproxy.png" alt="Nginx config"></div>
+                <div class="img-block"><img src="congratsnginx.png" alt="Nginx success"></div>
             </div>
 
-            <h3>4. Sécurité & Tunnels Cloudflare</h3>
-            <p>Pour ne jamais exposer l'adresse IP publique de mon serveur ou ouvrir des ports critiques sur mon routeur, la gestion des noms de domaine est externalisée. J'utilise les services et tunnels <strong>Cloudflare</strong> (via le daemon <code>cloudflared</code>) pour relier mon infrastructure locale au web de manière invisible et hautement sécurisée :</p>
+            <h3>4. <span class="fr">Tunnels Cloudflare</span><span class="en">Cloudflare Tunnels</span></h3>
+            <p>
+                <span class="fr">Pour ne jamais exposer l'adresse IP publique de mon serveur, j'utilise les tunnels <strong>Cloudflare</strong> (<code>cloudflared</code>) pour relier mon infrastructure locale au web de manière invisible :</span>
+                <span class="en">To never expose my server's public IP, I use <strong>Cloudflare</strong> tunnels (<code>cloudflared</code>) to connect my local infrastructure to the web invisibly:</span>
+            </p>
 
             <div class="img-block">
-                <img src="dns.png" alt="Configuration DNS Cloudflare">
+                <img src="dns.png" alt="Cloudflare DNS">
             </div>
 
         </div>
@@ -97,5 +113,36 @@
         </div>
     </footer>
 
+    <script>
+        function toggleLanguage() {
+            const html = document.documentElement;
+            const currentLang = html.getAttribute('lang') || 'fr';
+            const newLang = currentLang === 'fr' ? 'en' : 'fr';
+            html.setAttribute('lang', newLang);
+            localStorage.setItem('portfolioLang', newLang);
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('portfolioLang') || 'fr';
+            document.documentElement.setAttribute('lang', savedLang);
+            
+            const burger = document.querySelector('.burger');
+            const nav = document.querySelector('.nav-content');
+            const navLinks = document.querySelectorAll('.nav-links li');
+            
+            if(burger && nav) {
+                burger.addEventListener('click', () => {
+                    nav.classList.toggle('nav-active');
+                    burger.classList.toggle('toggle');
+                });
+                
+                navLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        nav.classList.remove('nav-active');
+                        burger.classList.remove('toggle');
+                    });
+                });
+            }
+        });
+    </script>
 </body>
 </html>

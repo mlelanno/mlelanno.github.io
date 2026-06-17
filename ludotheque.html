@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SAE 2.03 Ludothèque | Martin Le Lanno</title>
-    <link rel="stylesheet" href="style.css?v=10">
+    <link rel="stylesheet" href="style.css?v=12">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -12,19 +12,33 @@
 <body>
 
     <nav class="navbar">
-        <div class="logo">MLL.</div>
-        <ul class="nav-links">
-            <li><a href="index.html#home">Accueil</a></li>
-            <li><a href="index.html#projets">Retour aux Projets</a></li>
-            <li><a href="index.html#contact" class="btn-contact">Me Contacter</a></li>
-        </ul>
+        <div class="nav-header">
+            <div class="logo">MLL.</div>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+        <div class="nav-content">
+            <ul class="nav-links">
+                <li><a href="index.html#home"><span class="fr">Accueil</span><span class="en">Home</span></a></li>
+                <li><a href="index.html#projets"><span class="fr">Retour aux Projets</span><span class="en">Back to Projects</span></a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="btn-lang" onclick="toggleLanguage()">
+                    <span class="fr">ENGLISH</span><span class="en">FRANCAIS</span>
+                </button>
+                <a href="index.html#contact" class="btn-contact"><span class="fr">Me Contacter</span><span class="en">Contact Me</span></a>
+            </div>
+        </div>
     </nav>
 
-    <section style="padding-top: 120px;">
+    <section style="padding-top: 60px;">
         <div class="project-detail-hero">
-            <a href="index.html#projets" class="back-link"><i class="fas fa-arrow-left"></i> Retour au portfolio</a>
-            <h1 class="section-title" style="margin-bottom: 1rem;">Système d'Information "Ludothèque"</h1>
-            <div class="tech-tags" style="justify-content: center;">
+            <a href="index.html#projets" class="back-link"><i class="fas fa-arrow-left"></i> <span class="fr">Retour au portfolio</span><span class="en">Back to portfolio</span></a>
+            <h1 class="section-title" style="margin-bottom: 1rem;"><span class="fr">Système d'Information "Ludothèque"</span><span class="en">"Ludothèque" Information System</span></h1>
+            <div class="tech-tags" style="justify-content: flex-start; margin-bottom: 2rem;">
                 <span>Python / Django</span>
                 <span>MariaDB / SQLite3</span>
                 <span>Linux Debian 13</span>
@@ -35,62 +49,58 @@
         <div class="project-body">
             
             <p>
-                <strong>Le Concept :</strong> Nous avons construit de A à Z le "cerveau" numérique d'une entreprise de location de jeux de société. Plus qu'un simple site vitrine, l'objectif était de livrer une véritable application web dynamique, robuste et sécurisée. Voici l'interface finale, conçue pour permettre aux gérants de piloter facilement leur base de données :
+                <strong><span class="fr">Le Concept :</span><span class="en">The Concept:</span></strong> 
+                <span class="fr">Nous avons construit de A à Z le "cerveau" numérique d'une ludothèque. L'objectif était de livrer une véritable application web dynamique, robuste et sécurisée.</span>
+                <span class="en">We built the digital "brain" of a board game rental company from scratch. The objective was to deliver a truly dynamic, robust, and secure web application.</span>
             </p>
 
             <div class="img-block">
-                <img src="jeux.png" alt="Aperçu du Dashboard de la Ludothèque">
+                <img src="jeux.png" alt="Dashboard Ludothèque">
             </div>
 
-            <h3>1. L'Architecture Logicielle (Django MVT)</h3>
-            <p>Pour éviter le code "plat" et difficile à maintenir, nous avons utilisé l'architecture <strong>Modèle-Vue-Template</strong> du framework Django :</p>
+            <h3>1. <span class="fr">L'Architecture Logicielle</span><span class="en">Software Architecture</span> (Django MVT)</h3>
+            <p>
+                <span class="fr">Pour éviter le code difficile à maintenir, nous avons utilisé l'architecture <strong>Modèle-Vue-Template</strong> du framework Django :</span>
+                <span class="en">To avoid hard-to-maintain code, we used the <strong>Model-View-Template</strong> architecture of the Django framework:</span>
+            </p>
             <ul>
-                <li><strong>Le Modèle (L'Architecte) :</strong> Dicte la structure stricte des données en base.</li>
-                <li><strong>La Vue (Le Cerveau) :</strong> Orchestre la logique métier et la sécurité des requêtes.</li>
-                <li><strong>Le Template (La Décoration) :</strong> L'interface visuelle isolée du moteur.</li>
+                <li><strong><span class="fr">Le Modèle</span><span class="en">The Model</span> :</strong> <span class="fr">Dicte la structure stricte des données en base.</span><span class="en">Dictates the strict structure of database records.</span></li>
+                <li><strong><span class="fr">La Vue</span><span class="en">The View</span> :</strong> <span class="fr">Orchestre la logique métier et la sécurité des requêtes.</span><span class="en">Orchestrates business logic and request security.</span></li>
+                <li><strong><span class="fr">Le Template</span><span class="en">The Template</span> :</strong> <span class="fr">L'interface visuelle isolée du moteur.</span><span class="en">The visual interface isolated from the engine.</span></li>
             </ul>
-            <p>Cette séparation chirurgicale nous a permis de générer des interfaces CRUD (Création, Lecture, Mise à jour, Suppression) de manière très structurée, avec une arborescence de fichiers claire et modulaire :</p>
             
             <div class="img-block">
-                <img src="cruds.png" alt="Arborescence des fichiers CRUD">
+                <img src="cruds.png" alt="Fichiers CRUD">
             </div>
 
-            <h3>2. L'Architecture Hybride (Bases de Données)</h3>
-            <p>Pour parer à la dérive de configuration ("ça marchait sur mon PC"), le système adapte son moteur de données à son environnement : en phase de développement local, il s'appuie sur la légèreté de <code>SQLite3</code>. Une fois en production, le code bascule automatiquement sur la puissance de <code>MariaDB</code>, que nous avons initialisé et sécurisé directement en ligne de commande :</p>
+            <h3>2. <span class="fr">Architecture Hybride</span><span class="en">Hybrid Architecture</span> (DB)</h3>
+            <p>
+                <span class="fr">Le système s'adapte à son environnement : en développement local, il s'appuie sur la légèreté de <code>SQLite3</code>. En production, le code bascule automatiquement sur la puissance de <code>MariaDB</code>, initialisé en ligne de commande :</span>
+                <span class="en">The system adapts to its environment: in local development, it relies on the lightweight <code>SQLite3</code>. In production, the code automatically switches to the power of <code>MariaDB</code>, initialized via command line:</span>
+            </p>
 
             <div class="img-block">
-                <img src="mariadb.png" alt="Configuration du serveur MariaDB en terminal">
+                <img src="mariadb.png" alt="MariaDB Terminal">
             </div>
 
-            <h3>3. Déploiement : La Chaîne Logistique (CI/CD)</h3>
-            <p>La mise en ligne a été pensée comme une infrastructure réseau complète. Nous avons abandonné les transferts manuels au profit d'un pipeline professionnel. Le code est développé en collaboration sur GitHub, puis déployé sur une machine virtuelle Debian dédiée :</p>
+            <h3>3. <span class="fr">Déploiement : Chaîne Logistique</span><span class="en">Deployment: Supply Chain</span> (CI/CD)</h3>
+            <p>
+                <span class="fr">Le code est développé sur GitHub, puis déployé sur une machine virtuelle Debian dédiée. La mise à jour de l'application en production se fait par un simple rapatriement (clone/pull) de notre dépôt Git :</span>
+                <span class="en">The code is developed on GitHub, then deployed on a dedicated Debian virtual machine. The application update in production is done by simply pulling our Git repository:</span>
+            </p>
             
             <div class="grid-2">
-                <div class="img-block">
-                    <img src="debian13fr.png" alt="Machine Virtuelle Debian">
-                </div>
-                <div class="img-block">
-                    <img src="branches.png" alt="Gestion des branches Git">
-                </div>
+                <div class="img-block"><img src="debian13fr.png" alt="VM Debian"></div>
+                <div class="img-block"><img src="branches.png" alt="Git Branches"></div>
+                <div class="img-block"><img src="imagedldjango.png" alt="Git Clone"></div>
+                <div class="img-block"><img src="github.png" alt="Git Log"></div>
             </div>
 
-            <p>Le pont entre notre code et le serveur s'effectue via un tunnel SSH sécurisé. La mise à jour de l'application en production se fait par un simple rapatriement (clone/pull) de notre dépôt Git, garantissant une traçabilité absolue de chaque modification :</p>
-
-            <div class="grid-2">
-                <div class="img-block">
-                    <img src="imagedldjango.png" alt="Déploiement via Git Clone">
-                </div>
-                <div class="img-block">
-                    <img src="image_059215.png" alt="Historique des commits">
-                </div>
-            </div>
-
-            <h3>4. La Forteresse : Sécurité Intégrée</h3>
-            <p>Exposer une base de données clients sur internet exige des verrous stricts. La sécurité a été implémentée <em>by design</em> :</p>
+            <h3>4. <span class="fr">La Forteresse : Sécurité Intégrée</span><span class="en">The Fortress: Built-in Security</span></h3>
             <ul>
-                <li><strong>Neutralisation des Injections SQL :</strong> L'ORM de Django traduit et filtre systématiquement les requêtes entrantes, rendant les tentatives d'injections inopérantes.</li>
-                <li><strong>Jetons CSRF :</strong> L'application exige un ticket cryptographique à usage unique pour chaque soumission de formulaire, bloquant toute falsification inter-sites.</li>
-                <li><strong>Isolation des Secrets :</strong> Les identifiants MariaDB et clés de chiffrement sont stockés dans un fichier <code>.env</code> localisé exclusivement sur le serveur, évitant toute fuite d'informations sur GitHub.</li>
+                <li><strong>Anti-Injections SQL :</strong> <span class="fr">L'ORM de Django filtre systématiquement les requêtes entrantes.</span><span class="en">Django's ORM systematically filters incoming requests.</span></li>
+                <li><strong><span class="fr">Jetons</span><span class="en">Tokens</span> CSRF :</strong> <span class="fr">Ticket cryptographique bloquant toute falsification inter-sites.</span><span class="en">Cryptographic ticket blocking any cross-site request forgery.</span></li>
+                <li><strong><span class="fr">Isolation des Secrets</span><span class="en">Secret Isolation</span> :</strong> <span class="fr">Les identifiants sont stockés dans un fichier <code>.env</code> non versionné sur GitHub.</span><span class="en">Credentials are stored in a <code>.env</code> file, completely hidden from GitHub.</span></li>
             </ul>
 
         </div>
@@ -102,5 +112,36 @@
         </div>
     </footer>
 
+    <script>
+        function toggleLanguage() {
+            const html = document.documentElement;
+            const currentLang = html.getAttribute('lang') || 'fr';
+            const newLang = currentLang === 'fr' ? 'en' : 'fr';
+            html.setAttribute('lang', newLang);
+            localStorage.setItem('portfolioLang', newLang);
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('portfolioLang') || 'fr';
+            document.documentElement.setAttribute('lang', savedLang);
+            
+            const burger = document.querySelector('.burger');
+            const nav = document.querySelector('.nav-content');
+            const navLinks = document.querySelectorAll('.nav-links li');
+            
+            if(burger && nav) {
+                burger.addEventListener('click', () => {
+                    nav.classList.toggle('nav-active');
+                    burger.classList.toggle('toggle');
+                });
+                
+                navLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        nav.classList.remove('nav-active');
+                        burger.classList.remove('toggle');
+                    });
+                });
+            }
+        });
+    </script>
 </body>
 </html>
