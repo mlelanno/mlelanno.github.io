@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SAE 2.03 Ludothèque | Martin Le Lanno</title>
-    <link rel="stylesheet" href="style.css?v=2">
+    <link rel="stylesheet" href="style.css?v=10">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -23,7 +23,7 @@
     <section style="padding-top: 120px;">
         <div class="project-detail-hero">
             <a href="index.html#projets" class="back-link"><i class="fas fa-arrow-left"></i> Retour au portfolio</a>
-            <h1 class="section-title" style="margin-bottom: 1rem;">Projet "Ludothèque"</h1>
+            <h1 class="section-title" style="margin-bottom: 1rem;">Système d'Information "Ludothèque"</h1>
             <div class="tech-tags" style="justify-content: center;">
                 <span>Python / Django</span>
                 <span>MariaDB / SQLite3</span>
@@ -33,73 +33,64 @@
         </div>
 
         <div class="project-body">
-            <div class="img-block">
-                <img src="jeux.png" alt="Aperçu du Dashboard de la Ludothèque">
-                <div class="img-caption">Interface d'administration (Dashboard) de la Ludothèque.</div>
-            </div>
-
+            
             <p>
-                <strong>Le Concept :</strong> Nous avons construit de A à Z le "cerveau" numérique d'une entreprise de location de jeux de société. Ce n'est pas juste un "site vitrine", c'est une véritable application web dynamique qui permet d'interagir avec une base de données complexe. L'objectif était de livrer une infrastructure robuste, sécurisée, et déployée selon les standards professionnels.
+                <strong>Le Concept :</strong> Nous avons construit de A à Z le "cerveau" numérique d'une entreprise de location de jeux de société. Plus qu'un simple site vitrine, l'objectif était de livrer une véritable application web dynamique, robuste et sécurisée. Voici l'interface finale, conçue pour permettre aux gérants de piloter facilement leur base de données :
             </p>
 
+            <div class="img-block">
+                <img src="jeux.png" alt="Aperçu du Dashboard de la Ludothèque">
+            </div>
+
             <h3>1. L'Architecture Logicielle (Django MVT)</h3>
-            <p>Pour construire ce projet de façon modulaire et maintenable, nous avons utilisé l'architecture <strong>Modèle-Vue-Template</strong> du framework Python Django.</p>
+            <p>Pour éviter le code "plat" et difficile à maintenir, nous avons utilisé l'architecture <strong>Modèle-Vue-Template</strong> du framework Django :</p>
             <ul>
-                <li><strong>Le Modèle (L'Architecte) :</strong> Le plan de notre base de données. Il dicte comment ranger l'information de manière stricte.</li>
-                <li><strong>La Vue (Le Cerveau) :</strong> La logique mathématique. Elle vérifie si les formulaires sont valides et orchestre les requêtes.</li>
-                <li><strong>Le Template (La Décoration) :</strong> L'interface visuelle isolée du code technique.</li>
+                <li><strong>Le Modèle (L'Architecte) :</strong> Dicte la structure stricte des données en base.</li>
+                <li><strong>La Vue (Le Cerveau) :</strong> Orchestre la logique métier et la sécurité des requêtes.</li>
+                <li><strong>Le Template (La Décoration) :</strong> L'interface visuelle isolée du moteur.</li>
             </ul>
+            <p>Cette séparation chirurgicale nous a permis de générer des interfaces CRUD (Création, Lecture, Mise à jour, Suppression) de manière très structurée, avec une arborescence de fichiers claire et modulaire :</p>
             
             <div class="img-block">
                 <img src="cruds.png" alt="Arborescence des fichiers CRUD">
-                <div class="img-caption">Arborescence modulaire des templates pour la création d'interfaces CRUD (Create, Read, Update, Delete).</div>
             </div>
 
             <h3>2. L'Architecture Hybride (Bases de Données)</h3>
-            <p>Nous avons résolu un problème majeur d'ingénierie logicielle : la dérive de configuration entre l'environnement de code et le serveur web. Le système s'adapte automatiquement :</p>
-            <ul>
-                <li><strong>En Développement (Sur nos PC) :</strong> Le code utilise <code>SQLite3</code>. Une base légère stockée dans un fichier local pour itérer rapidement.</li>
-                <li><strong>En Production (Sur le serveur) :</strong> Le site détecte son environnement et bascule instantanément sur un serveur <code>MariaDB</code> capable d'encaisser la charge.</li>
-            </ul>
+            <p>Pour parer à la dérive de configuration ("ça marchait sur mon PC"), le système adapte son moteur de données à son environnement : en phase de développement local, il s'appuie sur la légèreté de <code>SQLite3</code>. Une fois en production, le code bascule automatiquement sur la puissance de <code>MariaDB</code>, que nous avons initialisé et sécurisé directement en ligne de commande :</p>
 
             <div class="img-block">
                 <img src="mariadb.png" alt="Configuration du serveur MariaDB en terminal">
-                <div class="img-caption">Initialisation et sécurisation du moteur MariaDB en ligne de commande.</div>
             </div>
 
             <h3>3. Déploiement : La Chaîne Logistique (CI/CD)</h3>
-            <p>Mettre un site sur internet ne se fait pas à la main. Nous avons mis en place un pipeline logiciel complet :</p>
+            <p>La mise en ligne a été pensée comme une infrastructure réseau complète. Nous avons abandonné les transferts manuels au profit d'un pipeline professionnel. Le code est développé en collaboration sur GitHub, puis déployé sur une machine virtuelle Debian dédiée :</p>
             
             <div class="grid-2">
                 <div class="img-block">
                     <img src="debian13fr.png" alt="Machine Virtuelle Debian">
-                    <div class="img-caption">Nous avons choisi une Machine Virtuelle Debian 13.</div>
                 </div>
                 <div class="img-block">
                     <img src="branches.png" alt="Gestion des branches Git">
-                    <div class="img-caption">Travail collaboratif et versionnement sur GitHub.</div>
                 </div>
             </div>
 
-            <p>Depuis nos terminaux, nous perçons un tunnel sécurisé (SSH) pour prendre le contrôle du serveur distant. La synchronisation se fait en rapatriant le code source depuis le dépôt GitHub directement sur l'infrastructure de production.</p>
+            <p>Le pont entre notre code et le serveur s'effectue via un tunnel SSH sécurisé. La mise à jour de l'application en production se fait par un simple rapatriement (clone/pull) de notre dépôt Git, garantissant une traçabilité absolue de chaque modification :</p>
 
             <div class="grid-2">
                 <div class="img-block">
                     <img src="imagedldjango.png" alt="Déploiement via Git Clone">
-                    <div class="img-caption">Rapatriement et synchronisation du code sur le serveur distant.</div>
                 </div>
                 <div class="img-block">
-                    <img src="github.png" alt="Historique des commits">
-                    <div class="img-caption">Traçabilité complète des versions (Git Log).</div>
+                    <img src="image_059215.png" alt="Historique des commits">
                 </div>
             </div>
 
             <h3>4. La Forteresse : Sécurité Intégrée</h3>
-            <p>Un SI gérant des données est une cible permanente. Nous avons verrouillé les accès critiques :</p>
+            <p>Exposer une base de données clients sur internet exige des verrous stricts. La sécurité a été implémentée <em>by design</em> :</p>
             <ul>
-                <li><strong>Neutralisation des Injections SQL :</strong> L'utilisation de l'ORM de Django agit comme un filtre intraitable, transformant les requêtes malveillantes en texte inoffensif.</li>
-                <li><strong>Jetons CSRF :</strong> Pour éviter la falsification de requêtes inter-sites, le système exige un ticket cryptographique à usage unique pour chaque formulaire soumis.</li>
-                <li><strong>Isolation des Secrets (.env) :</strong> Les identifiants MariaDB et les clés de chiffrement de Django ne sont jamais versionnés dans le code. Ils résident dans un fichier caché directement sur le serveur de production.</li>
+                <li><strong>Neutralisation des Injections SQL :</strong> L'ORM de Django traduit et filtre systématiquement les requêtes entrantes, rendant les tentatives d'injections inopérantes.</li>
+                <li><strong>Jetons CSRF :</strong> L'application exige un ticket cryptographique à usage unique pour chaque soumission de formulaire, bloquant toute falsification inter-sites.</li>
+                <li><strong>Isolation des Secrets :</strong> Les identifiants MariaDB et clés de chiffrement sont stockés dans un fichier <code>.env</code> localisé exclusivement sur le serveur, évitant toute fuite d'informations sur GitHub.</li>
             </ul>
 
         </div>
