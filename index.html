@@ -29,11 +29,17 @@
                 <li><a href="#skills"><span class="fr">Compétences</span><span class="en">Skills</span></a></li>
                 <li><a href="#projets"><span class="fr">Projets</span><span class="en">Projects</span></a></li>
                 <li><a href="#formation"><span class="fr">Parcours</span><span class="en">Background</span></a></li>
+                <li><a href="#cv"><span class="fr">Mon CV</span><span class="en">My Resume</span></a></li>
             </ul>
             <div class="nav-actions">
-                <button class="btn-lang" onclick="toggleLanguage()">
-                    <span class="fr">ENGLISH</span><span class="en">FRANCAIS</span>
-                </button>
+                <div class="nav-actions-top">
+                    <button class="btn-icon" onclick="toggleTheme()" aria-label="Toggle Dark/Light Mode" id="theme-toggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="btn-lang" onclick="toggleLanguage()">
+                        <span class="fr">ENGLISH</span><span class="en">FRANCAIS</span>
+                    </button>
+                </div>
                 <a href="#contact" class="btn-contact"><span class="fr">Me Contacter</span><span class="en">Contact Me</span></a>
             </div>
         </div>
@@ -55,7 +61,7 @@
                 </div>
             </div>
             <div class="image-container">
-                <img src="https://i.postimg.cc/5NNbKD0G/photo-cv.png" alt="Martin Le Lanno">
+                <img src="https://i.postimg.cc/5NNbKD0G/photo-cv.png" alt="Martin Le Lanno" loading="lazy">
             </div>
         </div>
     </header>
@@ -72,7 +78,7 @@
                     <li><i class="fas fa-wifi"></i> <span class="fr">Wireshark & Analyse</span><span class="en">Wireshark & Analysis</span></li>
                 </ul>
             </div>
-            
+
             <div class="skill-card">
                 <h3><i class="fas fa-user-secret accent-icon"></i> Cyber & Code</h3>
                 <ul>
@@ -99,90 +105,110 @@
     <section id="projets">
         <h2 class="section-title"><span class="fr">Réalisations Techniques</span><span class="en">Technical Projects</span></h2>
         <div class="projects-grid">
-            
-            <div class="project-card">
-                <div class="card-header">
-                    <h3><i class="fas fa-wifi"></i> <span class="fr">Déploiement & Audit Wi-Fi</span><span class="en">Wi-Fi Deployment & Audit</span></h3>
-                    <span>Projet SAE 13</span>
+
+            <div class="project-card has-image">
+                <div class="project-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=800" alt="Wi-Fi" class="project-image" loading="lazy">
                 </div>
-                <p><strong><span class="fr">De la couche physique à l'optimisation radio</span><span class="en">From physical layer to radio optimization</span></strong></p>
-                <div class="details">
-                    <div class="metrics-row">
-                        <span class="fr">Couverture: 500m² | 3 VLANs implémentés</span>
-                        <span class="en">Coverage: 500m² | 3 VLANs Configured</span>
+                <div class="project-content">
+                    <div class="card-header">
+                        <h3><i class="fas fa-wifi"></i> <span class="fr">Déploiement & Audit Wi-Fi</span><span class="en">Wi-Fi Deployment & Audit</span></h3>
+                        <span>Projet SAE 13</span>
                     </div>
-                    <p>
-                        <span class="fr">Réalisation intégrale d'une infrastructure Wi-Fi à l'IUT. Câblage physique (Cat 6A, tests Cablemaster), calculs PoE et configuration complète simulée sur Cisco Packet Tracer (WLC, VLAN, DHCP, DNS). Audit de couverture réalisé avec Acrylic Wi-Fi (Heatmaps) et mesures de débit via JPerf.</span>
-                        <span class="en">Full implementation of a Wi-Fi infrastructure at the university. Physical cabling (Cat 6A, Cablemaster tests), PoE calculations, and full configuration simulated on Cisco Packet Tracer (WLC, VLAN, DHCP, DNS). Coverage audit conducted with Acrylic Wi-Fi (Heatmaps) and throughput measurements via JPerf.</span>
-                    </p>
-                    <div class="tech-tags">
-                        <span>Packet Tracer</span> <span>Acrylic Wi-Fi</span> <span>Cabling</span> <span>JPerf</span>
+                    <p><strong><span class="fr">De la couche physique à l'optimisation radio</span><span class="en">From physical layer to radio optimization</span></strong></p>
+                    <div class="details">
+                        <div class="metrics-row">
+                            <span class="fr">Couverture: 500m² | 3 VLANs implémentés</span>
+                            <span class="en">Coverage: 500m² | 3 VLANs Configured</span>
+                        </div>
+                        <p>
+                            <span class="fr">Réalisation intégrale d'une infrastructure Wi-Fi à l'IUT. Câblage physique (Cat 6A, tests Cablemaster), calculs PoE et configuration complète simulée sur Cisco Packet Tracer (WLC, VLAN, DHCP, DNS). Audit de couverture réalisé avec Acrylic Wi-Fi (Heatmaps) et mesures de débit via JPerf.</span>
+                            <span class="en">Full implementation of a Wi-Fi infrastructure at the university. Physical cabling (Cat 6A, Cablemaster tests), PoE calculations, and full configuration simulated on Cisco Packet Tracer (WLC, VLAN, DHCP, DNS). Coverage audit conducted with Acrylic Wi-Fi (Heatmaps) and throughput measurements via JPerf.</span>
+                        </p>
+                        <div class="tech-tags">
+                            <span>Packet Tracer</span> <span>Acrylic Wi-Fi</span> <span>Cabling</span> <span>JPerf</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="project-card">
-                <div class="card-header">
-                    <h3><i class="fas fa-user-secret"></i> Labo Cyber & Pentest</h3>
-                    <span>Autodidacte / Self-Taught</span>
+            <div class="project-card has-image">
+                <div class="project-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=800" alt="Cyber" class="project-image" loading="lazy">
                 </div>
-                <p><strong><span class="fr">Apprentissage offensif (Red Team)</span><span class="en">Offensive learning (Red Team)</span></strong></p>
-                <div class="details">
-                    <div class="metrics-row">
-                        <span class="fr">15+ Vulnérabilités ciblées | 100% Éthique</span>
-                        <span class="en">15+ Vulnerabilities targeted | 100% Ethical</span>
+                <div class="project-content">
+                    <div class="card-header">
+                        <h3><i class="fas fa-user-secret"></i> Labo Cyber & Pentest</h3>
+                        <span>Autodidacte / Self-Taught</span>
                     </div>
-                    <p>
-                        <span class="fr">Mise en place d'un environnement de test éthique. Utilisation d'outils de pentest (OpenBullet, scan de vulnérabilités) et pratique de l'OSINT (Recherche en sources ouvertes).</span>
-                        <span class="en">Setup of an ethical testing environment. Use of pentesting tools (OpenBullet, vulnerability scanning) and OSINT practice (Open Source Intelligence).</span>
-                    </p>
-                    <div class="tech-tags">
-                        <span>Kali Linux</span> <span>OSINT</span> <span>Secu Offensive</span>
+                    <p><strong><span class="fr">Apprentissage offensif (Red Team)</span><span class="en">Offensive learning (Red Team)</span></strong></p>
+                    <div class="details">
+                        <div class="metrics-row">
+                            <span class="fr">15+ Vulnérabilités ciblées | 100% Éthique</span>
+                            <span class="en">15+ Vulnerabilities targeted | 100% Ethical</span>
+                        </div>
+                        <p>
+                            <span class="fr">Mise en place d'un environnement de test éthique. Utilisation d'outils de pentest (OpenBullet, scan de vulnérabilités) et pratique de l'OSINT (Recherche en sources ouvertes).</span>
+                            <span class="en">Setup of an ethical testing environment. Use of pentesting tools (OpenBullet, vulnerability scanning) and OSINT practice (Open Source Intelligence).</span>
+                        </p>
+                        <div class="tech-tags">
+                            <span>Kali Linux</span> <span>OSINT</span> <span>Secu Offensive</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card has-image">
+                <div class="project-image-wrapper">
+                    <img src="jeux.png" alt="Ludothèque Django" class="project-image" loading="lazy">
+                </div>
+                <div class="project-content">
+                    <div class="card-header">
+                        <h3><i class="fas fa-database"></i> Ludothèque Django</h3>
+                        <span>SAE 2.03</span>
+                    </div>
+                    <p><strong><span class="fr">App web sécurisée (CRUD)</span><span class="en">Secured Web App (CRUD)</span></strong></p>
+                    <div class="details">
+                        <div class="metrics-row">
+                            <span class="fr">100% CI/CD | Base de Données</span>
+                            <span class="en">100% CI/CD | Database</span>
+                        </div>
+                        <p>
+                            <span class="fr">Développement d'une plateforme de gestion de ludothèque. Architecture MVT avec découplage strict entre les environnements Dev (SQLite) et Prod (MariaDB). Déploiement CI/CD sur Debian.</span>
+                            <span class="en">Development of a game inventory management platform. MVT architecture with strict decoupling between Dev (SQLite) and Prod (MariaDB) environments. CI/CD deployment on Debian.</span>
+                        </p>
+                        <div class="tech-tags">
+                            <span>Django</span> <span>MariaDB</span> <span>Linux</span> <span>Git</span>
+                        </div>
+                        <a href="ludotheque.html" class="btn-project"><span class="fr">En savoir plus</span><span class="en">Read Case Study</span> <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
 
-            <div class="project-card">
-                <div class="card-header">
-                    <h3><i class="fas fa-database"></i> Ludothèque Django</h3>
-                    <span>SAE 2.03</span>
+            <div class="project-card has-image">
+                <div class="project-image-wrapper">
+                    <img src="dashboard.png" alt="Infrastructure Domestique" class="project-image" loading="lazy">
                 </div>
-                <p><strong><span class="fr">App web sécurisée (CRUD)</span><span class="en">Secured Web App (CRUD)</span></strong></p>
-                <div class="details">
-                    <div class="metrics-row">
-                        <span class="fr">100% CI/CD | Base de Données</span>
-                        <span class="en">100% CI/CD | Database</span>
+                <div class="project-content">
+                    <div class="card-header">
+                        <h3><i class="fas fa-server"></i> <span class="fr">Infrastructure Domestique</span><span class="en">Homelab Infrastructure</span></h3>
+                        <span>Projet Homelab</span>
                     </div>
-                    <p>
-                        <span class="fr">Développement d'une plateforme de gestion de ludothèque. Architecture MVT avec découplage strict entre les environnements Dev (SQLite) et Prod (MariaDB). Déploiement CI/CD sur Debian.</span>
-                        <span class="en">Development of a game inventory management platform. MVT architecture with strict decoupling between Dev (SQLite) and Prod (MariaDB) environments. CI/CD deployment on Debian.</span>
-                    </p>
-                    <div class="tech-tags">
-                        <span>Django</span> <span>MariaDB</span> <span>Linux</span> <span>Git</span>
+                    <p><strong><span class="fr">Administration système & Sécurité</span><span class="en">Sysadmin & Security</span></strong></p>
+                    <div class="details">
+                        <div class="metrics-row">
+                            <span class="fr">Statut: Actuellement Eteint | 15+ Conteneurs | Surveillance Active</span>
+                            <span class="en">Status: Currently Off | 15+ Containers | 24/7 Monitoring</span>
+                        </div>
+                        <p>
+                            <span class="fr">Maintien d'une infrastructure serveur conteneurisée 24/7. Administration Linux avancée, isolation des flux via Docker et sécurisation des accès distants par tunnel WireGuard. Reverse proxy Nginx et durcissement via Fail2Ban.</span>
+                            <span class="en">Maintenance of a 24/7 containerized server infrastructure. Advanced Linux administration, traffic isolation via Docker, and secured remote access via WireGuard tunnel. Nginx reverse proxy and hardening with Fail2Ban.</span>
+                        </p>
+                        <div class="tech-tags">
+                            <span>Docker</span> <span>WireGuard</span> <span>Linux</span> <span>Nginx</span>
+                        </div>
+                        <a href="homelab.html" class="btn-project"><span class="fr">En savoir plus</span><span class="en">Read Case Study</span> <i class="fas fa-arrow-right"></i></a>
                     </div>
-                    <a href="ludotheque.html" class="btn-project"><span class="fr">En savoir plus</span><span class="en">Read Case Study</span> <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="card-header">
-                    <h3><i class="fas fa-server"></i> <span class="fr">Infrastructure Domestique</span><span class="en">Homelab Infrastructure</span></h3>
-                    <span>Projet Homelab</span>
-                </div>
-                <p><strong><span class="fr">Administration système & Sécurité</span><span class="en">Sysadmin & Security</span></strong></p>
-                <div class="details">
-                    <div class="metrics-row">
-                        <span class="fr">Statut: Actuellement Eteint | 15+ Conteneurs | Surveillance Active</span>
-                        <span class="en">Status: Currently Off | 15+ Containers | 24/7 Monitoring</span>
-                    </div>
-                    <p>
-                        <span class="fr">Maintien d'une infrastructure serveur conteneurisée 24/7. Administration Linux avancée, isolation des flux via Docker et sécurisation des accès distants par tunnel WireGuard. Reverse proxy Nginx et durcissement via Fail2Ban.</span>
-                        <span class="en">Maintenance of a 24/7 containerized server infrastructure. Advanced Linux administration, traffic isolation via Docker, and secured remote access via WireGuard tunnel. Nginx reverse proxy and hardening with Fail2Ban.</span>
-                    </p>
-                    <div class="tech-tags">
-                        <span>Docker</span> <span>WireGuard</span> <span>Linux</span> <span>Nginx</span>
-                    </div>
-                    <a href="homelab.html" class="btn-project"><span class="fr">En savoir plus</span><span class="en">Read Case Study</span> <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
 
@@ -192,12 +218,12 @@
     <section id="formation">
         <h2 class="section-title"><span class="fr">Parcours</span><span class="en">Background</span></h2>
         <div class="timeline">
-            
+
             <div class="timeline-item">
                 <div class="date">2025 - 2028</div>
                 <div class="content">
                     <div class="school-header">
-                        <img src="https://i.postimg.cc/pTfJtJbr/UHA.png" alt="Logo UHA" class="school-logo">
+                        <img src="https://i.postimg.cc/pTfJtJbr/UHA.png" alt="Logo UHA" class="school-logo" loading="lazy">
                         <h3><span class="fr">BUT Réseaux & Télécoms</span><span class="en">Bachelor in Networks & Telecoms</span></h3>
                     </div>
                     <p>IUT de Colmar - UHA</p>
@@ -209,7 +235,7 @@
                 <div class="date">2025</div>
                 <div class="content">
                     <div class="school-header">
-                        <img src="https://i.postimg.cc/kgGstS8T/deck.png" alt="Logo Lycée Deck" class="school-logo">
+                        <img src="https://i.postimg.cc/kgGstS8T/deck.png" alt="Logo Lycée Deck" class="school-logo" loading="lazy">
                         <h3><span class="fr">Baccalauréat STI2D</span><span class="en">STI2D High School Diploma</span></h3>
                     </div>
                     <p>Lycée Théodore Deck - <span class="fr">Mention Bien</span><span class="en">With Honors</span></p>
@@ -222,7 +248,7 @@
                 <div class="date">Certifications</div>
                 <div class="content">
                     <div class="school-header">
-                        <img src="https://i.postimg.cc/8zQqSDY1/pix.png" alt="Logo Pix" class="school-logo" style="width: 40px;">
+                        <img src="https://i.postimg.cc/8zQqSDY1/pix.png" alt="Logo Pix" class="school-logo" style="width: 40px;" loading="lazy">
                         <h3>Certifications Pro</h3>
                     </div>
                     <p class="description">
@@ -260,7 +286,7 @@
                     <span class="en">Group management (ages 3-11), child safety, teamwork, and activity planning.</span>
                 </div>
             </div>
-            
+
             <div class="project-card">
                 <div class="card-header">
                     <h3><i class="fas fa-eye"></i> <span class="fr">Stage d'observation</span><span class="en">Observation Internship</span></h3>
@@ -275,11 +301,151 @@
         </div>
     </section>
 
+
+    <section id="cv" class="cv-section">
+        <h2 class="section-title"><span class="fr">Mon CV</span><span class="en">My Resume</span></h2>
+
+        <div class="cv-container">
+            <div class="cv-sidebar">
+                <div class="photo-container">
+                    <img src="https://i.postimg.cc/5NNbKD0G/photo-cv.png" alt="Martin Le Lanno" loading="lazy">
+                </div>
+
+                <div class="cv-block">
+                    <h3>Contact</h3>
+                    <div class="contact-info-cv">
+                        <div><i class="fas fa-envelope"></i> lelannomartin@gmail.com</div>
+                        <div><i class="fas fa-phone"></i> 06 14 78 72 40</div>
+                        <div><i class="fas fa-map-marker-alt"></i> Alsace, France</div>
+                        <div><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/martin-le-lanno" target="_blank">linkedin.com/in/martin-le-lanno</a></div>
+                        <div><i class="fas fa-globe"></i> <a href="https://mlelanno.github.io" target="_blank">mlelanno.github.io</a></div>
+                    </div>
+                </div>
+
+                <div class="cv-block">
+                    <h3>Compétences</h3>
+                    <ul class="skill-list-cv">
+                        <li><strong>Réseaux :</strong> Cisco, VLAN, Routage, Wireshark, Modèle OSI</li>
+                        <li><strong>Système :</strong> Linux (Debian), Windows, Virtualisation</li>
+                        <li><strong>Cyber :</strong> Pentest (OpenBullet), OSINT, Sécurité Offensive</li>
+                        <li><strong>Dev :</strong> Python, HTML5/CSS3, Bash</li>
+                    </ul>
+                </div>
+
+                <div class="cv-block">
+                    <h3>Langues</h3>
+                    <ul class="skill-list-cv">
+                        <li><strong>Anglais :</strong> C1 (Avancé)</li>
+                        <li><strong>Allemand :</strong> A2 (Basique)</li>
+                        <li><strong>Français :</strong> Langue maternelle</li>
+                    </ul>
+                </div>
+
+                <div class="cv-block">
+                    <h3>Certifications & Atouts</h3>
+                    <ul class="skill-list-cv">
+                        <li>PIX (Niveau Avancé 2)</li>
+                        <li>BAFA Complet</li>
+                        <li>Permis B + Véhicule</li>
+                    </ul>
+                </div>
+
+                <div class="cv-block">
+                    <h3>Qualités & Loisirs</h3>
+                    <ul class="skill-list-cv">
+                        <li>Rigoureux, Responsable, À l'écoute</li>
+                        <li>Nouvelles technologies, Sports (VTT, Ski)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="cv-main">
+                <div class="cv-header">
+                    <h1>Martin LE LANNO</h1>
+                    <h2>Étudiant en Réseaux & Télécommunications</h2>
+                </div>
+
+                <p class="cv-intro">
+                    Je m'appelle Martin Le Lanno, j’ai 17 ans et je suis actuellement étudiant en première année de BUT Réseaux et Télécommunications à l’IUT de Colmar. Passionné par la sécurité informatique et les infrastructures réseau, je souhaite me spécialiser dans la cybersécurité.
+                    Curieux et motivé, je cherche une alternance pour développer mes compétences, comprendre le terrain et progresser techniquement. Mon objectif est de valider mon BUT et de poursuivre en <strong>Master en Cybersécurité</strong>.
+                </p>
+
+                <h3 class="cv-section-title">Formation</h3>
+
+                <div class="cv-item">
+                    <div class="cv-item-header">
+                        <span class="cv-item-title">BUT Réseaux & Télécommunications</span>
+                        <span class="cv-item-date">2025 - Présent</span>
+                    </div>
+                    <div class="cv-item-subtitle">IUT de Colmar (UHA)</div>
+                    <div class="cv-item-desc">
+                        Apprentissage de l'architecture réseaux, administration système et cybersécurité.
+                    </div>
+                </div>
+
+                <div class="cv-item">
+                    <div class="cv-item-header">
+                        <span class="cv-item-title">Baccalauréat STI2D (Option SIN)</span>
+                        <span class="cv-item-date">2025</span>
+                    </div>
+                    <div class="cv-item-subtitle">Lycée Théodore Deck - Mention Bien</div>
+                    <div class="cv-item-desc">Spécialité Systèmes d'Information et Numérique.</div>
+                </div>
+
+                <h3 class="cv-section-title">Projets Techniques</h3>
+
+                <div class="cv-item">
+                    <div class="cv-item-header">
+                        <span class="cv-item-title">Déploiement & Audit Wi-Fi (SAE 13)</span>
+                        <span class="cv-item-date">2025</span>
+                    </div>
+                    <div class="cv-item-desc">
+                        Projet complet d'infrastructure IUT : Câblage physique (Cat 6A), configuration Cisco (WLC, DHCP, VLAN) et audit de couverture radio pro (Acrylic Wi-Fi Heatmaps, JPerf).
+                    </div>
+                </div>
+
+                <div class="cv-item">
+                    <div class="cv-item-header">
+                        <span class="cv-item-title">Labo Cyber & Pentest (Autodidacte)</span>
+                        <span class="cv-item-date">Perso</span>
+                    </div>
+                    <div class="cv-item-desc">
+                        Mise en place d'un environnement de test (Kali Linux). Pratique du pentesting (OpenBullet), analyse de vulnérabilités et techniques OSINT.
+                    </div>
+                </div>
+
+                <h3 class="cv-section-title">Expériences</h3>
+
+                <div class="cv-item">
+                    <div class="cv-item-header">
+                        <span class="cv-item-title">Serveur en Restauration</span>
+                        <span class="cv-item-date">Été 2025</span>
+                    </div>
+                    <div class="cv-item-subtitle">Auberge du Kastelberg (Vosges)</div>
+                    <div class="cv-item-desc">Service en salle intense, gestion du stress et relation client.</div>
+                </div>
+
+                <div class="cv-item">
+                    <div class="cv-item-header">
+                        <span class="cv-item-title">Animateur BAFA</span>
+                        <span class="cv-item-date">2025</span>
+                    </div>
+                    <div class="cv-item-subtitle">Accueil de Loisirs (Ungersheim)</div>
+                    <div class="cv-item-desc">Encadrement de groupes, responsabilité et sécurité des mineurs.</div>
+                </div>
+
+                <div class="cv-download-wrapper">
+                    <a href="CV_Martin_LE-LANNO_Alternance.pdf" download class="btn-primary cv-download-btn"><i class="fas fa-download"></i> Télécharger le CV (PDF)</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer id="contact">
         <div class="footer-content">
             <h2><span class="fr">Me Contacter</span><span class="en">Contact Me</span></h2>
             <p><span class="fr">Je suis actuellement à la recherche d'une alternance. N'hésitez pas à me contacter pour échanger.</span><span class="en">I am currently looking for a work-study program. Feel free to reach out.</span></p>
-            
+
             <div class="contact-info-block">
                 <div class="contact-item">
                     <i class="fas fa-envelope"></i>
@@ -305,6 +471,46 @@
     </div>
 
     <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            const sections = document.querySelectorAll('section, header[id="home"]');
+            sections.forEach(section => {
+                section.classList.add('fade-in-section');
+                observer.observe(section);
+            });
+        });
+
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('portfolioTheme', newTheme);
+
+            const icon = document.querySelector('#theme-toggle i');
+            if(icon) {
+                if(newTheme === 'light') {
+                    icon.className = 'fas fa-sun';
+                } else {
+                    icon.className = 'fas fa-moon';
+                }
+            }
+        }
+
         function toggleLanguage() {
             const html = document.documentElement;
             const currentLang = html.getAttribute('lang') || 'fr';
@@ -317,16 +523,23 @@
             const savedLang = localStorage.getItem('portfolioLang') || 'fr';
             document.documentElement.setAttribute('lang', savedLang);
 
+            const savedTheme = localStorage.getItem('portfolioTheme') || 'dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            const icon = document.querySelector('#theme-toggle i');
+            if(savedTheme === 'light' && icon) {
+                icon.className = 'fas fa-sun';
+            }
+
             const burger = document.querySelector('.burger');
             const nav = document.querySelector('.nav-content');
             const navLinks = document.querySelectorAll('.nav-links li');
-            
+
             if(burger && nav) {
                 burger.addEventListener('click', () => {
                     nav.classList.toggle('nav-active');
                     burger.classList.toggle('toggle');
                 });
-                
+
                 navLinks.forEach(link => {
                     link.addEventListener('click', () => {
                         nav.classList.remove('nav-active');
@@ -350,7 +563,7 @@
                 });
 
                 if(span) {
-                    span.onclick = function() { 
+                    span.onclick = function() {
                         modal.style.display = "none";
                     }
                 }
