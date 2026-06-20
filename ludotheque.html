@@ -6,7 +6,7 @@
     <title>SAE 2.03 Ludothèque | Martin Le Lanno</title>
     <link rel="stylesheet" href="style.css?v=12">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -26,9 +26,14 @@
                 <li><a href="index.html#projets"><span class="fr">Retour aux Projets</span><span class="en">Back to Projects</span></a></li>
             </ul>
             <div class="nav-actions">
-                <button class="btn-lang" onclick="toggleLanguage()">
-                    <span class="fr">ENGLISH</span><span class="en">FRANCAIS</span>
-                </button>
+                <div class="nav-actions-top">
+                    <button class="btn-icon" onclick="toggleTheme()" aria-label="Toggle Dark/Light Mode" id="theme-toggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="btn-lang" onclick="toggleLanguage()">
+                        <span class="fr">EN</span><span class="en">FR</span>
+                    </button>
+                </div>
                 <a href="index.html#contact" class="btn-contact"><span class="fr">Me Contacter</span><span class="en">Contact Me</span></a>
             </div>
         </div>
@@ -47,15 +52,15 @@
         </div>
 
         <div class="project-body">
-            
+
             <p>
-                <strong><span class="fr">Le Concept :</span><span class="en">The Concept:</span></strong> 
+                <strong><span class="fr">Le Concept :</span><span class="en">The Concept:</span></strong>
                 <span class="fr">Nous avons construit de A à Z le "cerveau" numérique d'une ludothèque. L'objectif était de livrer une véritable application web dynamique, robuste et sécurisée.</span>
                 <span class="en">We built the digital "brain" of a board game rental company from scratch. The objective was to deliver a truly dynamic, robust, and secure web application.</span>
             </p>
 
             <div class="img-block">
-                <img src="jeux.png" alt="Dashboard Ludothèque">
+                <img loading="lazy" src="jeux.png" alt="Dashboard Ludothèque">
             </div>
 
             <h3>1. <span class="fr">L'Architecture Logicielle</span><span class="en">Software Architecture</span> (Django MVT)</h3>
@@ -68,9 +73,9 @@
                 <li><strong><span class="fr">La Vue</span><span class="en">The View</span> :</strong> <span class="fr">Orchestre la logique métier et la sécurité des requêtes.</span><span class="en">Orchestrates business logic and request security.</span></li>
                 <li><strong><span class="fr">Le Template</span><span class="en">The Template</span> :</strong> <span class="fr">L'interface visuelle isolée du moteur.</span><span class="en">The visual interface isolated from the engine.</span></li>
             </ul>
-            
+
             <div class="img-block">
-                <img src="cruds.png" alt="Fichiers CRUD">
+                <img loading="lazy" src="cruds.png" alt="Fichiers CRUD">
             </div>
 
             <h3>2. <span class="fr">Architecture Hybride</span><span class="en">Hybrid Architecture</span> (DB)</h3>
@@ -80,7 +85,7 @@
             </p>
 
             <div class="img-block">
-                <img src="mariadb.png" alt="MariaDB Terminal">
+                <img loading="lazy" src="mariadb.png" alt="MariaDB Terminal">
             </div>
 
             <h3>3. <span class="fr">Déploiement : Chaîne Logistique</span><span class="en">Deployment: Supply Chain</span> (CI/CD)</h3>
@@ -88,12 +93,12 @@
                 <span class="fr">Le code est développé sur GitHub, puis déployé sur une machine virtuelle Debian dédiée. La mise à jour de l'application en production se fait par un simple rapatriement (clone/pull) de notre dépôt Git :</span>
                 <span class="en">The code is developed on GitHub, then deployed on a dedicated Debian virtual machine. The application update in production is done by simply pulling our Git repository:</span>
             </p>
-            
+
             <div class="grid-2">
-                <div class="img-block"><img src="debian13fr.png" alt="VM Debian"></div>
-                <div class="img-block"><img src="branches.png" alt="Git Branches"></div>
-                <div class="img-block"><img src="imagedldjango.png" alt="Git Clone"></div>
-                <div class="img-block"><img src="github.png" alt="Git Log"></div>
+                <div class="img-block"><img loading="lazy" src="debian13fr.png" alt="VM Debian"></div>
+                <div class="img-block"><img loading="lazy" src="branches.png" alt="Git Branches"></div>
+                <div class="img-block"><img loading="lazy" src="imagedldjango.png" alt="Git Clone"></div>
+                <div class="img-block"><img loading="lazy" src="github.png" alt="Git Log"></div>
             </div>
 
             <h3>4. <span class="fr">La Forteresse : Sécurité Intégrée</span><span class="en">The Fortress: Built-in Security</span></h3>
@@ -113,6 +118,46 @@
     </footer>
 
     <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            const sections = document.querySelectorAll('section, header[id="home"]');
+            sections.forEach(section => {
+                section.classList.add('fade-in-section');
+                observer.observe(section);
+            });
+        });
+
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('portfolioTheme', newTheme);
+
+            const icon = document.querySelector('#theme-toggle i');
+            if(icon) {
+                if(newTheme === 'light') {
+                    icon.className = 'fas fa-sun';
+                } else {
+                    icon.className = 'fas fa-moon';
+                }
+            }
+        }
+
         function toggleLanguage() {
             const html = document.documentElement;
             const currentLang = html.getAttribute('lang') || 'fr';
@@ -123,17 +168,24 @@
         document.addEventListener('DOMContentLoaded', () => {
             const savedLang = localStorage.getItem('portfolioLang') || 'fr';
             document.documentElement.setAttribute('lang', savedLang);
-            
+
+            const savedTheme = localStorage.getItem('portfolioTheme') || 'dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            const icon = document.querySelector('#theme-toggle i');
+            if(savedTheme === 'light' && icon) {
+                icon.className = 'fas fa-sun';
+            }
+
             const burger = document.querySelector('.burger');
             const nav = document.querySelector('.nav-content');
             const navLinks = document.querySelectorAll('.nav-links li');
-            
+
             if(burger && nav) {
                 burger.addEventListener('click', () => {
                     nav.classList.toggle('nav-active');
                     burger.classList.toggle('toggle');
                 });
-                
+
                 navLinks.forEach(link => {
                     link.addEventListener('click', () => {
                         nav.classList.remove('nav-active');
