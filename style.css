@@ -168,6 +168,10 @@ code,
 }
 
 /* ---------------- Custom cursor ---------------- */
+@media (pointer: fine) {
+  body, body * { cursor: none !important; }
+}
+
 .cursor-dot,
 .cursor-ring {
   position: fixed;
@@ -912,12 +916,15 @@ footer > .footer-content > p { color: var(--muted); font-size: 1.05rem; margin-b
   margin-bottom: 22px;
   background: var(--bg-soft);
   transition: 0.4s var(--ease);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .img-block:hover { border-color: var(--border-strong); transform: translateY(-4px); box-shadow: var(--shadow); }
-.img-block img { width: 100%; display: block; }
+.img-block img { width: 100%; max-height: 500px; object-fit: contain; display: block; }
 .img-block--small { max-width: 520px; margin-left: auto; margin-right: auto; }
 .img-block--small img { width: 100%; }
-.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; align-items: start; }
 
 /* ---------------- Modal ---------------- */
 .modal {
