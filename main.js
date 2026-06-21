@@ -225,14 +225,26 @@
   /* ---------- Custom cursor (dot + ring) ---------- */
   function initCursor() {
     if (prefersReduced || window.matchMedia("(hover: none)").matches) return;
-    const dot = document.querySelector(".cursor-dot");
-    const ring = document.querySelector(".cursor-ring");
-    if (!dot || !ring) return;
 
-    let mx = window.innerWidth / 2,
-      my = window.innerHeight / 2;
-    let rx = mx,
-      ry = my;
+    /* Remove any inline cursor divs already in the markup to avoid duplicates */
+    document.querySelectorAll(".cursor-dot, .cursor-ring").forEach((el) => el.remove());
+
+    /* Create elements fresh and append directly to <body> so they are never
+       trapped inside a stacking context created by backdrop-filter on the navbar */
+    const dot = document.createElement("div");
+    dot.className = "cursor-dot";
+    dot.setAttribute("aria-hidden", "true");
+
+    const ring = document.createElement("div");
+    ring.className = "cursor-ring";
+    ring.setAttribute("aria-hidden", "true");
+
+    document.body.appendChild(dot);
+    document.body.appendChild(ring);
+
+    /* Start off-screen so they don't flash at 0,0 before first mousemove */
+    let mx = -200, my = -200;
+    let rx = -200, ry = -200;
 
     window.addEventListener("mousemove", (e) => {
       mx = e.clientX;
