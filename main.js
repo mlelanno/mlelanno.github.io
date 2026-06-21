@@ -45,7 +45,6 @@
     initCounters();
     initTilt();
     initMagnetic();
-    initCursor();
     initModal();
     initParallaxHero();
     initToTop();
@@ -220,55 +219,6 @@
         el.style.transform = "";
       });
     });
-  }
-
-  /* ---------- Custom cursor (dot + ring) ---------- */
-  function initCursor() {
-    if (prefersReduced || window.matchMedia("(hover: none)").matches) return;
-
-    /* Remove any inline cursor divs already in the markup to avoid duplicates */
-    document.querySelectorAll(".cursor-dot, .cursor-ring").forEach((el) => el.remove());
-
-    /* Create elements fresh and append directly to <body> so they are never
-       trapped inside a stacking context created by backdrop-filter on the navbar */
-    const dot = document.createElement("div");
-    dot.className = "cursor-dot";
-    dot.setAttribute("aria-hidden", "true");
-
-    const ring = document.createElement("div");
-    ring.className = "cursor-ring";
-    ring.setAttribute("aria-hidden", "true");
-
-    document.body.appendChild(dot);
-    document.body.appendChild(ring);
-
-    /* Start off-screen so they don't flash at 0,0 before first mousemove */
-    let mx = -200, my = -200;
-    let rx = -200, ry = -200;
-
-    window.addEventListener("mousemove", (e) => {
-      mx = e.clientX;
-      my = e.clientY;
-      dot.style.left = mx + "px";
-      dot.style.top = my + "px";
-    });
-
-    const loop = () => {
-      rx += (mx - rx) * 0.18;
-      ry += (my - ry) * 0.18;
-      ring.style.left = rx + "px";
-      ring.style.top = ry + "px";
-      requestAnimationFrame(loop);
-    };
-    loop();
-
-    document.querySelectorAll("a, button, [data-tilt], .burger").forEach((el) => {
-      el.addEventListener("mouseenter", () => document.body.classList.add("cursor-hover"));
-      el.addEventListener("mouseleave", () => document.body.classList.remove("cursor-hover"));
-    });
-
-    document.addEventListener("mouseleave", () => document.body.classList.add("cursor-hidden"));
-    document.addEventListener("mouseenter", () => document.body.classList.remove("cursor-hidden"));
   }
 
   /* ---------- Hero subtle parallax ---------- */
