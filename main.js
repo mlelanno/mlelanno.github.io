@@ -237,13 +237,15 @@
     window.addEventListener("mousemove", (e) => {
       mx = e.clientX;
       my = e.clientY;
-      dot.style.transform = `translate(${mx}px, ${my}px)`;
+      dot.style.left = mx + "px";
+      dot.style.top = my + "px";
     });
 
     const loop = () => {
       rx += (mx - rx) * 0.18;
       ry += (my - ry) * 0.18;
-      ring.style.transform = `translate(${rx}px, ${ry}px)`;
+      ring.style.left = rx + "px";
+      ring.style.top = ry + "px";
       requestAnimationFrame(loop);
     };
     loop();
