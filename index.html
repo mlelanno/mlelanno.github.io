@@ -3,21 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Martin Le Lanno | Portfolio R&T</title>
-    <link rel="stylesheet" href="style.css?v=12">
+    <meta name="theme-color" content="#0a0a0b">
+    <meta name="description" content="Portfolio de Martin Le Lanno — Étudiant en Réseaux & Télécommunications, spécialisé en cybersécurité et infrastructures. À la recherche d'une alternance.">
+    <title>Martin Le Lanno — Réseaux, Systèmes & Cybersécurité</title>
+    <link rel="stylesheet" href="style.css?v=20">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
+    <div class="scroll-progress"></div>
     <nav class="navbar">
         <div class="nav-header">
-            <div class="logo">MLL.</div>
-            <div class="burger">
+            <div class="logo">MLL</div>
+            <div class="burger" aria-label="Menu" role="button" tabindex="0">
                 <div class="line1"></div>
                 <div class="line2"></div>
                 <div class="line3"></div>
@@ -29,58 +31,77 @@
                 <li><a href="#skills"><span class="fr">Compétences</span><span class="en">Skills</span></a></li>
                 <li><a href="#projets"><span class="fr">Projets</span><span class="en">Projects</span></a></li>
                 <li><a href="#formation"><span class="fr">Parcours</span><span class="en">Background</span></a></li>
+                <li><a href="#experience"><span class="fr">Terrain</span><span class="en">Field</span></a></li>
                 <li><a href="#cv"><span class="fr">Mon CV</span><span class="en">My Resume</span></a></li>
             </ul>
             <div class="nav-actions">
                 <div class="nav-actions-top">
-                    <button class="btn-icon" onclick="toggleTheme()" aria-label="Toggle Dark/Light Mode" id="theme-toggle">
+                    <button class="btn-icon" onclick="toggleTheme()" aria-label="Basculer le thème clair/sombre" id="theme-toggle">
                         <i class="fas fa-moon"></i>
                     </button>
                     <button class="btn-lang" onclick="toggleLanguage()">
-                        <span class="fr">ENGLISH</span><span class="en">FRANCAIS</span>
+                        <span class="fr">ENGLISH</span><span class="en">FRANÇAIS</span>
                     </button>
                 </div>
-                <a href="#contact" class="btn-contact"><span class="fr">Me Contacter</span><span class="en">Contact Me</span></a>
+                <a href="#contact" class="btn-contact" data-magnetic><span class="fr">Me Contacter</span><span class="en">Contact Me</span></a>
+                <div class="nav-socials">
+                    <a href="https://www.linkedin.com/in/martin-le-lanno-03b069386/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://mlelanno.github.io" target="_blank" aria-label="Site web"><i class="fas fa-globe"></i></a>
+                    <a href="mailto:lelannomartin@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
             </div>
         </div>
     </nav>
 
+    <main>
     <header id="home">
         <div class="hero-content">
             <div class="text-container">
-                <span class="badge"><i class="fas fa-shield-alt"></i> Cyber & Network</span>
-                <h1>Martin Le Lanno</h1>
-                <h2><span class="fr">Étudiant en Réseaux & Télécommunications</span><span class="en">Networking & Telecommunications Student</span></h2>
+                <span class="badge"><i class="fas fa-shield-alt"></i> Cyber &amp; Network</span>
+                <h1 aria-label="Martin Le Lanno">
+                    <span class="word"><span class="char" style="animation-delay:.05s">M</span><span class="char" style="animation-delay:.09s">a</span><span class="char" style="animation-delay:.13s">r</span><span class="char" style="animation-delay:.17s">t</span><span class="char" style="animation-delay:.21s">i</span><span class="char" style="animation-delay:.25s">n</span></span>
+                    <span class="word"><span class="char" style="animation-delay:.33s">L</span><span class="char" style="animation-delay:.37s">e</span></span>
+                    <span class="word"><span class="char" style="animation-delay:.45s">L</span><span class="char" style="animation-delay:.49s">a</span><span class="char" style="animation-delay:.53s">n</span><span class="char" style="animation-delay:.57s">n</span><span class="char" style="animation-delay:.61s">o</span></span>
+                </h1>
+                <h2><span class="fr">Étudiant en Réseaux &amp; Télécommunications</span><span class="en">Networking &amp; Telecommunications Student</span></h2>
                 <p>
-                    <span class="fr">Je m'appelle Martin, j’ai 17 ans et je suis étudiant en BUT Réseaux & Télécommunications à Colmar. Spécialisé dans la conception, le déploiement et la sécurisation d'infrastructures informatiques. Je cherche une alternance pour me professionnaliser, avec pour cible un <strong>Master en Cybersécurité</strong> à l'international.</span>
-                    <span class="en">My name is Martin, I am 17 and a Networking & Telecommunications student in Colmar. Specialized in designing, deploying, and securing IT infrastructures. I am looking for a work-study program to accelerate my skills, aiming for an international <strong>Master's in Cybersecurity</strong>.</span>
+                    <span class="fr">Je m'appelle Martin, j'ai 17 ans et je suis étudiant en BUT Réseaux &amp; Télécommunications à Colmar. Spécialisé dans la conception, le déploiement et la sécurisation d'infrastructures informatiques. Je cherche une alternance pour me professionnaliser, avec pour cible un <strong>Master en Cybersécurité</strong> à l'international.</span>
+                    <span class="en">My name is Martin, I am 17 and a Networking &amp; Telecommunications student in Colmar. Specialized in designing, deploying, and securing IT infrastructures. I am looking for a work-study program to accelerate my skills, aiming for an international <strong>Master's in Cybersecurity</strong>.</span>
                 </p>
                 <div class="cta-group">
-                    <a href="#contact" class="btn-primary"><span class="fr">Me contacter</span><span class="en">Get in touch</span></a>
+                    <a href="#contact" class="btn-primary" data-magnetic><span class="fr">Me contacter</span><span class="en">Get in touch</span> <i class="fas fa-arrow-right"></i></a>
                     <a href="CV_Martin_LE-LANNO_Alternance.pdf" download class="btn-secondary"><i class="fas fa-file-pdf"></i> <span class="fr">CV PDF</span><span class="en">Resume PDF</span></a>
                 </div>
             </div>
-            <div class="image-container">
-                <img src="https://i.postimg.cc/5NNbKD0G/photo-cv.png" alt="Martin Le Lanno" loading="lazy">
+            <div class="image-container" data-parallax="-0.04">
+                <img src="https://i.postimg.cc/5NNbKD0G/photo-cv.png" alt="Martin Le Lanno">
             </div>
         </div>
     </header>
 
+    <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+            <span>Cisco</span><span>VLAN</span><span>Wireshark</span><span>Linux Debian</span><span>Docker</span><span>WireGuard</span><span>Nginx</span><span>Python</span><span>Pentest</span><span>OSINT</span><span>Cloudflare</span><span>Django</span>
+            <span>Cisco</span><span>VLAN</span><span>Wireshark</span><span>Linux Debian</span><span>Docker</span><span>WireGuard</span><span>Nginx</span><span>Python</span><span>Pentest</span><span>OSINT</span><span>Cloudflare</span><span>Django</span>
+        </div>
+    </div>
+
     <section id="skills">
-        <h2 class="section-title"><span class="fr">Mes Compétences</span><span class="en">My Skills</span></h2>
+        <span class="eyebrow" data-reveal>01 — Expertise</span>
+        <h2 class="section-title" data-reveal><span class="fr">Mes Compétences</span><span class="en">My Skills</span></h2>
         <div class="skills-grid">
-            <div class="skill-card">
-                <h3><i class="fas fa-network-wired accent-icon"></i> Infra & Systems</h3>
+            <div class="skill-card" data-reveal>
+                <h3><i class="fas fa-network-wired accent-icon"></i> Infra &amp; Systems</h3>
                 <ul>
                     <li><i class="fas fa-server"></i> <span class="fr">Config Switch/Routeur (VLAN)</span><span class="en">Switch/Router Config (VLAN)</span></li>
                     <li><i class="fas fa-box"></i> <span class="fr">Équipements Cisco</span><span class="en">Cisco Equipment</span></li>
                     <li><i class="devicon-linux-plain colored"></i> <span class="fr">Admin Linux (Debian) / Win</span><span class="en">Linux Admin (Debian) / Win</span></li>
-                    <li><i class="fas fa-wifi"></i> <span class="fr">Wireshark & Analyse</span><span class="en">Wireshark & Analysis</span></li>
+                    <li><i class="fas fa-wifi"></i> <span class="fr">Wireshark &amp; Analyse</span><span class="en">Wireshark &amp; Analysis</span></li>
                 </ul>
             </div>
 
-            <div class="skill-card">
-                <h3><i class="fas fa-user-secret accent-icon"></i> Cyber & Code</h3>
+            <div class="skill-card" data-reveal style="--delay:.1s">
+                <h3><i class="fas fa-user-secret accent-icon"></i> Cyber &amp; Code</h3>
                 <ul>
                     <li><i class="fas fa-bug" style="color: #ef4444;"></i> <strong>Pentest</strong> (OpenBullet, Tools)</li>
                     <li><i class="fas fa-search-location"></i> <strong>OSINT</strong> <span class="fr">(Investigation)</span><span class="en">(Investigation)</span></li>
@@ -89,30 +110,50 @@
                 </ul>
             </div>
 
-            <div class="skill-card">
-                <h3><i class="fas fa-globe accent-icon"></i> <span class="fr">Langues & Atouts</span><span class="en">Languages & Assets</span></h3>
+            <div class="skill-card" data-reveal style="--delay:.2s">
+                <h3><i class="fas fa-globe accent-icon"></i> <span class="fr">Langues &amp; Atouts</span><span class="en">Languages &amp; Assets</span></h3>
                 <ul>
                     <li><i class="fas fa-language"></i> <strong><span class="fr">Anglais C1 (Avancé)</span><span class="en">English C1 (Advanced)</span></strong></li>
                     <li><i class="fas fa-flag"></i> <span class="fr">Allemand A2</span><span class="en">German A2</span></li>
                     <li><i class="fas fa-car"></i> <span class="fr">Permis B</span><span class="en">Driver's License</span></li>
-                    <li><i class="fas fa-lightbulb"></i> <span class="fr">Veille Cyber & Curiosité</span><span class="en">Cyber Watch & Curiosity</span></li>
+                    <li><i class="fas fa-lightbulb"></i> <span class="fr">Veille Cyber &amp; Curiosité</span><span class="en">Cyber Watch &amp; Curiosity</span></li>
                     <li><i class="fas fa-users"></i> <span class="fr">Esprit d'équipe</span><span class="en">Team Spirit</span></li>
                 </ul>
+            </div>
+        </div>
+
+        <div class="stats-strip" data-reveal>
+            <div class="stat">
+                <div class="num" data-count="17"></div>
+                <div class="label"><span class="fr">Ans</span><span class="en">Years old</span></div>
+            </div>
+            <div class="stat">
+                <div class="num" data-count="15" data-suffix="+"></div>
+                <div class="label"><span class="fr">Conteneurs</span><span class="en">Containers</span></div>
+            </div>
+            <div class="stat">
+                <div class="num">C1</div>
+                <div class="label"><span class="fr">Anglais</span><span class="en">English</span></div>
+            </div>
+            <div class="stat">
+                <div class="num" data-count="2028"></div>
+                <div class="label"><span class="fr">Objectif Master</span><span class="en">Master goal</span></div>
             </div>
         </div>
     </section>
 
     <section id="projets">
-        <h2 class="section-title"><span class="fr">Réalisations Techniques</span><span class="en">Technical Projects</span></h2>
+        <span class="eyebrow" data-reveal>02 — Réalisations</span>
+        <h2 class="section-title" data-reveal><span class="fr">Réalisations Techniques</span><span class="en">Technical Projects</span></h2>
         <div class="projects-grid">
 
-            <div class="project-card has-image">
+            <div class="project-card has-image" data-tilt data-reveal>
                 <div class="project-image-wrapper">
                     <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=800" alt="Wi-Fi" class="project-image" loading="lazy">
                 </div>
                 <div class="project-content">
                     <div class="card-header">
-                        <h3><i class="fas fa-wifi"></i> <span class="fr">Déploiement & Audit Wi-Fi</span><span class="en">Wi-Fi Deployment & Audit</span></h3>
+                        <h3><i class="fas fa-wifi"></i> <span class="fr">Déploiement &amp; Audit Wi-Fi</span><span class="en">Wi-Fi Deployment &amp; Audit</span></h3>
                         <span>Projet SAE 13</span>
                     </div>
                     <p><strong><span class="fr">De la couche physique à l'optimisation radio</span><span class="en">From physical layer to radio optimization</span></strong></p>
@@ -132,13 +173,13 @@
                 </div>
             </div>
 
-            <div class="project-card has-image">
+            <div class="project-card has-image" data-tilt data-reveal style="--delay:.1s">
                 <div class="project-image-wrapper">
                     <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=800" alt="Cyber" class="project-image" loading="lazy">
                 </div>
                 <div class="project-content">
                     <div class="card-header">
-                        <h3><i class="fas fa-user-secret"></i> Labo Cyber & Pentest</h3>
+                        <h3><i class="fas fa-user-secret"></i> Labo Cyber &amp; Pentest</h3>
                         <span>Autodidacte / Self-Taught</span>
                     </div>
                     <p><strong><span class="fr">Apprentissage offensif (Red Team)</span><span class="en">Offensive learning (Red Team)</span></strong></p>
@@ -158,7 +199,7 @@
                 </div>
             </div>
 
-            <div class="project-card has-image">
+            <div class="project-card has-image" data-tilt data-reveal style="--delay:.2s">
                 <div class="project-image-wrapper">
                     <img src="jeux.png" alt="Ludothèque Django" class="project-image" loading="lazy">
                 </div>
@@ -185,7 +226,7 @@
                 </div>
             </div>
 
-            <div class="project-card has-image">
+            <div class="project-card has-image" data-tilt data-reveal style="--delay:.3s">
                 <div class="project-image-wrapper">
                     <img src="dashboard.png" alt="Infrastructure Domestique" class="project-image" loading="lazy">
                 </div>
@@ -194,7 +235,7 @@
                         <h3><i class="fas fa-server"></i> <span class="fr">Infrastructure Domestique</span><span class="en">Homelab Infrastructure</span></h3>
                         <span>Projet Homelab</span>
                     </div>
-                    <p><strong><span class="fr">Administration système & Sécurité</span><span class="en">Sysadmin & Security</span></strong></p>
+                    <p><strong><span class="fr">Administration système &amp; Sécurité</span><span class="en">Sysadmin &amp; Security</span></strong></p>
                     <div class="details">
                         <div class="metrics-row">
                             <span class="fr">Statut: Actuellement Eteint | 15+ Conteneurs | Surveillance Active</span>
@@ -216,22 +257,23 @@
     </section>
 
     <section id="formation">
-        <h2 class="section-title"><span class="fr">Parcours</span><span class="en">Background</span></h2>
+        <span class="eyebrow" data-reveal>03 — Parcours</span>
+        <h2 class="section-title" data-reveal><span class="fr">Parcours</span><span class="en">Background</span></h2>
         <div class="timeline">
 
-            <div class="timeline-item">
+            <div class="timeline-item" data-reveal>
                 <div class="date">2025 - 2028</div>
                 <div class="content">
                     <div class="school-header">
                         <img src="https://i.postimg.cc/pTfJtJbr/UHA.png" alt="Logo UHA" class="school-logo" loading="lazy">
-                        <h3><span class="fr">BUT Réseaux & Télécoms</span><span class="en">Bachelor in Networks & Telecoms</span></h3>
+                        <h3><span class="fr">BUT Réseaux &amp; Télécoms</span><span class="en">Bachelor in Networks &amp; Telecoms</span></h3>
                     </div>
                     <p>IUT de Colmar - UHA</p>
                     <p class="description"><span class="fr">Architecture réseaux, Cybersécurité, Développement système. <strong>Recherche d'alternance pour la 2ème année.</strong></span><span class="en">Network architecture, Cybersecurity, System development. <strong>Seeking a work-study contract for my 2nd year.</strong></span></p>
                 </div>
             </div>
 
-            <div class="timeline-item">
+            <div class="timeline-item" data-reveal style="--delay:.1s">
                 <div class="date">2025</div>
                 <div class="content">
                     <div class="school-header">
@@ -244,7 +286,7 @@
                 </div>
             </div>
 
-            <div class="timeline-item">
+            <div class="timeline-item" data-reveal style="--delay:.2s">
                 <div class="date">Certifications</div>
                 <div class="content">
                     <div class="school-header">
@@ -261,51 +303,58 @@
     </section>
 
     <section id="experience">
-        <h2 class="section-title"><span class="fr">Terrain</span><span class="en">Field Experience</span></h2>
+        <span class="eyebrow" data-reveal>04 — Terrain</span>
+        <h2 class="section-title" data-reveal><span class="fr">Terrain</span><span class="en">Field Experience</span></h2>
         <div class="projects-grid">
-            <div class="project-card">
-                <div class="card-header">
-                    <h3><i class="fas fa-utensils"></i> <span class="fr">Job Saisonnier</span><span class="en">Summer Job</span></h3>
-                    <span><span class="fr">Été 2025</span><span class="en">Summer 2025</span></span>
-                </div>
-                <p><strong><span class="fr">Serveur</span><span class="en">Waiter</span> - Auberge du Kastelberg</strong></p>
-                <div class="details">
-                    <span class="fr">Service en salle intense, gestion du stress en période de forte affluence et relation client.</span>
-                    <span class="en">Intense dining service, stress management during peak hours, and customer relations.</span>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="card-header">
-                    <h3><i class="fas fa-child"></i> Animation</h3>
-                    <span>2025</span>
-                </div>
-                <p><strong><span class="fr">Animateur en Accueil de Loisirs</span><span class="en">Youth Leader</span></strong></p>
-                <div class="details">
-                    <span class="fr">Gestion de groupes (3-11 ans), sécurité des mineurs, travail d'équipe et organisation d'activités.</span>
-                    <span class="en">Group management (ages 3-11), child safety, teamwork, and activity planning.</span>
+            <div class="project-card" data-tilt data-reveal>
+                <div class="project-content">
+                    <div class="card-header">
+                        <h3><i class="fas fa-utensils"></i> <span class="fr">Job Saisonnier</span><span class="en">Summer Job</span></h3>
+                        <span><span class="fr">Été 2025</span><span class="en">Summer 2025</span></span>
+                    </div>
+                    <p><strong><span class="fr">Serveur</span><span class="en">Waiter</span> - Auberge du Kastelberg</strong></p>
+                    <div class="details">
+                        <span class="fr">Service en salle intense, gestion du stress en période de forte affluence et relation client.</span>
+                        <span class="en">Intense dining service, stress management during peak hours, and customer relations.</span>
+                    </div>
                 </div>
             </div>
 
-            <div class="project-card">
-                <div class="card-header">
-                    <h3><i class="fas fa-eye"></i> <span class="fr">Stage d'observation</span><span class="en">Observation Internship</span></h3>
-                    <span>2022</span>
+            <div class="project-card" data-tilt data-reveal style="--delay:.1s">
+                <div class="project-content">
+                    <div class="card-header">
+                        <h3><i class="fas fa-child"></i> Animation</h3>
+                        <span>2025</span>
+                    </div>
+                    <p><strong><span class="fr">Animateur en Accueil de Loisirs</span><span class="en">Youth Leader</span></strong></p>
+                    <div class="details">
+                        <span class="fr">Gestion de groupes (3-11 ans), sécurité des mineurs, travail d'équipe et organisation d'activités.</span>
+                        <span class="en">Group management (ages 3-11), child safety, teamwork, and activity planning.</span>
+                    </div>
                 </div>
-                <p><strong>Artisanat - Boucherie Braun</strong></p>
-                <div class="details">
-                    <span class="fr">Découverte du monde professionnel, respect strict des normes d'hygiène et ponctualité.</span>
-                    <span class="en">Discovery of the professional world, strict adherence to hygiene standards, and punctuality.</span>
+            </div>
+
+            <div class="project-card" data-tilt data-reveal style="--delay:.2s">
+                <div class="project-content">
+                    <div class="card-header">
+                        <h3><i class="fas fa-eye"></i> <span class="fr">Stage d'observation</span><span class="en">Observation Internship</span></h3>
+                        <span>2022</span>
+                    </div>
+                    <p><strong>Artisanat - Boucherie Braun</strong></p>
+                    <div class="details">
+                        <span class="fr">Découverte du monde professionnel, respect strict des normes d'hygiène et ponctualité.</span>
+                        <span class="en">Discovery of the professional world, strict adherence to hygiene standards, and punctuality.</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-
     <section id="cv" class="cv-section">
-        <h2 class="section-title"><span class="fr">Mon CV</span><span class="en">My Resume</span></h2>
+        <span class="eyebrow" data-reveal>05 — CV</span>
+        <h2 class="section-title" data-reveal><span class="fr">Mon CV</span><span class="en">My Resume</span></h2>
 
-        <div class="cv-container">
+        <div class="cv-container" data-reveal>
             <div class="cv-sidebar">
                 <div class="photo-container">
                     <img src="https://i.postimg.cc/5NNbKD0G/photo-cv.png" alt="Martin Le Lanno" loading="lazy">
@@ -342,7 +391,7 @@
                 </div>
 
                 <div class="cv-block">
-                    <h3>Certifications & Atouts</h3>
+                    <h3>Certifications &amp; Atouts</h3>
                     <ul class="skill-list-cv">
                         <li>PIX (Niveau Avancé 2)</li>
                         <li>BAFA Complet</li>
@@ -351,7 +400,7 @@
                 </div>
 
                 <div class="cv-block">
-                    <h3>Qualités & Loisirs</h3>
+                    <h3>Qualités &amp; Loisirs</h3>
                     <ul class="skill-list-cv">
                         <li>Rigoureux, Responsable, À l'écoute</li>
                         <li>Nouvelles technologies, Sports (VTT, Ski)</li>
@@ -362,11 +411,11 @@
             <div class="cv-main">
                 <div class="cv-header">
                     <h1>Martin LE LANNO</h1>
-                    <h2>Étudiant en Réseaux & Télécommunications</h2>
+                    <h2>Étudiant en Réseaux &amp; Télécommunications</h2>
                 </div>
 
                 <p class="cv-intro">
-                    Je m'appelle Martin Le Lanno, j’ai 17 ans et je suis actuellement étudiant en première année de BUT Réseaux et Télécommunications à l’IUT de Colmar. Passionné par la sécurité informatique et les infrastructures réseau, je souhaite me spécialiser dans la cybersécurité.
+                    Je m'appelle Martin Le Lanno, j'ai 17 ans et je suis actuellement étudiant en première année de BUT Réseaux et Télécommunications à l'IUT de Colmar. Passionné par la sécurité informatique et les infrastructures réseau, je souhaite me spécialiser dans la cybersécurité.
                     Curieux et motivé, je cherche une alternance pour développer mes compétences, comprendre le terrain et progresser techniquement. Mon objectif est de valider mon BUT et de poursuivre en <strong>Master en Cybersécurité</strong>.
                 </p>
 
@@ -374,7 +423,7 @@
 
                 <div class="cv-item">
                     <div class="cv-item-header">
-                        <span class="cv-item-title">BUT Réseaux & Télécommunications</span>
+                        <span class="cv-item-title">BUT Réseaux &amp; Télécommunications</span>
                         <span class="cv-item-date">2025 - Présent</span>
                     </div>
                     <div class="cv-item-subtitle">IUT de Colmar (UHA)</div>
@@ -396,7 +445,7 @@
 
                 <div class="cv-item">
                     <div class="cv-item-header">
-                        <span class="cv-item-title">Déploiement & Audit Wi-Fi (SAE 13)</span>
+                        <span class="cv-item-title">Déploiement &amp; Audit Wi-Fi (SAE 13)</span>
                         <span class="cv-item-date">2025</span>
                     </div>
                     <div class="cv-item-desc">
@@ -406,7 +455,7 @@
 
                 <div class="cv-item">
                     <div class="cv-item-header">
-                        <span class="cv-item-title">Labo Cyber & Pentest (Autodidacte)</span>
+                        <span class="cv-item-title">Labo Cyber &amp; Pentest (Autodidacte)</span>
                         <span class="cv-item-date">Perso</span>
                     </div>
                     <div class="cv-item-desc">
@@ -440,22 +489,24 @@
             </div>
         </div>
     </section>
+    </main>
 
     <footer id="contact">
         <div class="footer-content">
-            <h2><span class="fr">Me Contacter</span><span class="en">Contact Me</span></h2>
-            <p><span class="fr">Je suis actuellement à la recherche d'une alternance. N'hésitez pas à me contacter pour échanger.</span><span class="en">I am currently looking for a work-study program. Feel free to reach out.</span></p>
+            <span class="eyebrow" data-reveal>06 — Contact</span>
+            <h2 data-reveal><span class="fr">Me Contacter</span><span class="en">Contact Me</span></h2>
+            <p data-reveal><span class="fr">Je suis actuellement à la recherche d'une alternance. N'hésitez pas à me contacter pour échanger.</span><span class="en">I am currently looking for a work-study program. Feel free to reach out.</span></p>
 
             <div class="contact-info-block">
-                <div class="contact-item">
+                <div class="contact-item" data-reveal>
                     <i class="fas fa-envelope"></i>
                     <a href="mailto:lelannomartin@gmail.com">lelannomartin@gmail.com</a>
                 </div>
-                <div class="contact-item">
+                <div class="contact-item" data-reveal style="--delay:.08s">
                     <i class="fas fa-phone"></i>
                     <a href="tel:+33614787240">06 14 78 72 40</a>
                 </div>
-                <div class="contact-item">
+                <div class="contact-item" data-reveal style="--delay:.16s">
                     <i class="fab fa-linkedin"></i>
                     <a href="https://www.linkedin.com/in/martin-le-lanno-03b069386/" target="_blank"><span class="fr">Mon LinkedIn</span><span class="en">My LinkedIn</span></a>
                 </div>
@@ -465,116 +516,13 @@
         </div>
     </footer>
 
+    <button class="to-top" aria-label="Retour en haut"><i class="fas fa-arrow-up"></i></button>
+
     <div id="modal-notes" class="modal">
         <span class="close">&times;</span>
         <img class="modal-content" id="img-notes" alt="Relevé de notes">
     </div>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.1
-            };
-
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, observerOptions);
-
-            const sections = document.querySelectorAll('section, header[id="home"]');
-            sections.forEach(section => {
-                section.classList.add('fade-in-section');
-                observer.observe(section);
-            });
-        });
-
-        function toggleTheme() {
-            const html = document.documentElement;
-            const currentTheme = html.getAttribute('data-theme');
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            html.setAttribute('data-theme', newTheme);
-            localStorage.setItem('portfolioTheme', newTheme);
-
-            const icon = document.querySelector('#theme-toggle i');
-            if(icon) {
-                if(newTheme === 'light') {
-                    icon.className = 'fas fa-sun';
-                } else {
-                    icon.className = 'fas fa-moon';
-                }
-            }
-        }
-
-        function toggleLanguage() {
-            const html = document.documentElement;
-            const currentLang = html.getAttribute('lang') || 'fr';
-            const newLang = currentLang === 'fr' ? 'en' : 'fr';
-            html.setAttribute('lang', newLang);
-            localStorage.setItem('portfolioLang', newLang);
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const savedLang = localStorage.getItem('portfolioLang') || 'fr';
-            document.documentElement.setAttribute('lang', savedLang);
-
-            const savedTheme = localStorage.getItem('portfolioTheme') || 'dark';
-            document.documentElement.setAttribute('data-theme', savedTheme);
-            const icon = document.querySelector('#theme-toggle i');
-            if(savedTheme === 'light' && icon) {
-                icon.className = 'fas fa-sun';
-            }
-
-            const burger = document.querySelector('.burger');
-            const nav = document.querySelector('.nav-content');
-            const navLinks = document.querySelectorAll('.nav-links li');
-
-            if(burger && nav) {
-                burger.addEventListener('click', () => {
-                    nav.classList.toggle('nav-active');
-                    burger.classList.toggle('toggle');
-                });
-
-                navLinks.forEach(link => {
-                    link.addEventListener('click', () => {
-                        nav.classList.remove('nav-active');
-                        burger.classList.remove('toggle');
-                    });
-                });
-            }
-
-            const modal = document.getElementById("modal-notes");
-            const modalImg = document.getElementById("img-notes");
-            const linkDocs = document.querySelectorAll('.link-doc');
-            const span = document.getElementsByClassName("close")[0];
-
-            if(modal && modalImg) {
-                linkDocs.forEach(link => {
-                    link.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        modal.style.display = "block";
-                        modalImg.src = this.href;
-                    });
-                });
-
-                if(span) {
-                    span.onclick = function() {
-                        modal.style.display = "none";
-                    }
-                }
-
-                window.onclick = function(event) {
-                    if (event.target == modal) {
-                        modal.style.display = "none";
-                    }
-                }
-            }
-        });
-    </script>
+    <script src="main.js?v=20"></script>
 </body>
 </html>
